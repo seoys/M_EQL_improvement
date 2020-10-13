@@ -1207,7 +1207,7 @@ handsome.ui.front = handsome.ui.front || (function () {
 			loop: true,
 			prerender: true,
 			autoplay: true,
-			path: '../../resources/lottie/loading.json',
+			path: '/resources/lottie/loading.json',
 		});
 		_loadingCount++;
 
@@ -1340,7 +1340,7 @@ handsome.ui.front = handsome.ui.front || (function () {
 			dayNamesMin: ['SU', 'MO', 'TH', 'WE', 'TH', 'FR', 'SA'],
 			showMonthAfterYear: true,
 			showOn: 'button',
-			buttonImage: '../../resources/images/ui/button/ui_btn_calendar.png',
+			buttonImage: '/resources/images/ui/button/ui_btn_calendar.png',
 			buttonImageOnly: false,// 수정 웹접근성 관련
 			buttonText: 'Select date',
 			currentText: 'Now',
