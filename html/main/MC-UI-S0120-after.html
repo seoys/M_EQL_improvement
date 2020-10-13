@@ -1,0 +1,3353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,  viewport-fit=cover">
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="noindex" name="robots" />
+	<meta name="description" content="한섬 EQL">
+	<meta property="og:locale:alternate" content="ko_KR">
+	<meta property="og:title" content="한섬 EQL">
+	<meta property="og:url" content="https://www.thehandsome.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="../../resources/images/favicon/share.png">
+	<meta property="og:site_name" content="한섬 EQL">
+	<meta property="og:description" content="">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="한섬 EQL">
+	<meta name="twitter:url" content="https://www.thehandsome.com/">
+	<meta name="twitter:image" content="../../resources/images/favicon/share.png">
+	<meta name="twitter:description" content="">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<title>한섬 EQL</title>
+
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="180x180" href="../../resources/images/favicon/apple-touch-icon-180x180-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="167x167" href="../../resources/images/favicon/apple-touch-icon-167x167-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="152x152" href="../../resources/images/favicon/apple-touch-icon-152x152-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="144x144" href="../../resources/images/favicon/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="120x120" href="../../resources/images/favicon/apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="114x114" href="../../resources/images/favicon/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="76x76" href="../../resources/images/favicon/apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="72x72" href="../../resources/images/favicon/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="60x60" href="../../resources/images/favicon/apple-touch-icon-60x60-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../../resources/images/favicon/apple-touch-icon-120x120-precomposed.png">
+
+	<link rel="shortcut icon" sizes="256x256" href="../../resources/images/favicon/favicon_256x256.png">
+	<link rel="shortcut icon" sizes="196x196" href="../../resources/images/favicon/favicon_196x196.png">
+	<link rel="shortcut icon" sizes="128x128" href="../../resources/images/favicon/favicon_128x128.png">
+	<link rel="shortcut icon" sizes="48x48" href="../../resources/images/favicon/favicon_48x48.png">
+	<link rel="shortcut icon" sizes="32x32" href="../../resources/images/favicon/favicon_32x32.png">
+	<link rel="shortcut icon" href="../../resources/images/favicon/favicon_16x16.png">
+
+	<link rel="icon" sizes="128x128" href="../../resources/images/favicon/favicon_128x128.png" type="image/png">
+	<link rel="icon" sizes="64x64" href="../../resources/images/favicon/favicon_64x64.png" type="image/png">
+	<link rel="icon" sizes="32x32" href="../../resources/images/favicon/favicon_32x32.png" type="image/png">
+
+	<meta name="msapplication-TileImage" content="../../resources/images/favicon/apple-touch-icon-144x144-precomposed.png">
+	<meta name="msapplication-TileColor" content="#222222">
+
+	<!-- Vendors CSS
+			================================================== -->
+	<link rel="stylesheet" href="../../resources/vendors/overlayScrollBars/css/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="../../resources/vendors/jquery-ui.1.12.1/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../resources/vendors/star-rating/css/star-rating.min.css">
+	<link rel="stylesheet" href="../../resources/vendors/swiper-4.4.6/css/swiper.min.css">
+
+	<!-- Custom styles for this template
+			================================================== -->
+	<link rel="stylesheet" href="../../resources/css/ui.min.css">
+	<link rel="stylesheet" href="../../resources/css/layout.min.css">
+
+	<!-- Vendors javascript
+			================================================== -->
+	<script src="../../resources/vendors/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="../../resources/vendors/jquery-ui.1.12.1/jquery-ui.min.js"></script>
+	<script src="../../resources/vendors/touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="../../resources/vendors/jquery.Marquee/jquery.marquee.min.js"></script>
+	<script src="../../resources/vendors/scrollpos-styler/scrollPosStyler.min.js"></script>
+	<script src="../../resources/vendors/overlayScrollBars/js/OverlayScrollbars.js"></script>
+	<script src="../../resources/vendors/star-rating/js/star-rating.min.js"></script>
+	<script src="../../resources/vendors/swiper-4.4.6/js/swiper.min.js"></script>
+	<script src="../../resources/vendors/css-element-queries/ResizeSensor.js"></script>
+	<script src="../../resources/vendors/lottie/lottie.min.js"></script><!-- 200403 추가 : 로딩 애니메이션 플러그인 추가 -->
+
+	<!-- UI JavaScript
+			================================================== -->
+	<script src="../../resources/js/front_ui.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var mainSectionSwiper, recommendSwiper, seasonKeywordSwiper, todayInsider;
+
+			// special banner Marquee 기능
+			if ($('.special-banner-wrap').length > 0) {
+				handsome.ui.front.setMarquee();
+			}
+			var Pagefirst = true;
+			mainSectionSwiper = new Swiper('.js-main-wrap', {
+				init: false,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				speed: 300,
+				allowTouchMove: false,
+				autoHeight: true,
+                /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+                on: {
+                    slideChange: function() {
+                        if ($('.video-wrap', this.$el).length > 0) {
+                            $('.video-wrap', this.$el).remove();
+                        }
+                    }
+                },
+                /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+			});
+			mainSectionSwiper.init();
+
+
+            //201006 수정 : 상단 탭 cart 클릭시 비활성화
+			$('.mheader-bottom .mbtn').not('.cart').on('click', function () {
+				if (!$(this).hasClass('is-active')) {
+					$('.mheader-bottom .mbtn').removeClass('is-active');
+                    $(this).addClass('is-active');
+
+					mainSectionSwiper.slideTo($(this).index());
+				}
+			});
+
+
+			$('.btn-video').on('click', function () {
+				var videoData, videoType, videoUrl;
+				videoData = $(this).data();
+				videoType = videoData.videoType;
+				videoUrl = videoData.videoUrl;
+				switch (videoType) {
+					case 'youtube':
+						handsome.ui.front.setYoutubeIFrame($(this).closest('.video-box'), videoUrl);
+						break;
+					case 'vimeo':
+						handsome.ui.front.setVimeoIframe($(this).closest('.video-box'), videoUrl);
+						break;
+				}
+			});
+
+			$('.main-today-img-video-box.js-today-img-swiper').each(function (index) {
+				var swiper;
+
+				swiper = new Swiper(this, {
+					init: false,
+					slidesPerView: 1,
+					spaceBetween: 0,
+					speed: 600,
+					// autoHeight: true,
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+                    /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+                    on: {
+                        slideChange: function() {
+                            if ($('.js-gate-detail-banner .video-wrap').length > 0) {
+                                $('.js-gate-detail-banner .video-wrap').remove();
+                            }
+                        }
+                    },
+                    /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+				});
+
+				swiper.init();
+			});
+
+			recommendSwiper = new Swiper('.js-recommend-swiper', {
+				init: false,
+				slidesPerView: 2,
+				spaceBetween: 15,
+				speed: 600,
+			});
+
+			recommendSwiper.init();
+
+			seasonKeywordSwiper = new Swiper('.js-thumb-list-swiper', {
+				init: false,
+				slidesPerView: 2,
+				spaceBetween: 0,
+				speed: 600,
+			});
+
+			seasonKeywordSwiper.init();
+
+			todayInsider = new Swiper('.js-main-insider', {
+				init: false,
+				slidesPerView: 1,
+				spaceBetween: 15,
+				speed: 600,
+			});
+
+			todayInsider.init();
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-inner">
+            <!-- s : header-wrap -->
+            <!-- 201006 수정 : 상단 탭 1단으로 조정 -->
+			<div class="header-wrap mheader-wrap">
+				<div class="mheader-box">
+					<div class="mheader-bottom">
+						<a href="#" class="mbtn is-active">For you</a>
+                        <a href="#" class="mbtn">Today</a>
+                        <a href="#" class="mbtn cart">Cart(99+)</a>
+					</div>
+				</div>
+            </div>
+            <!-- //201006 수정 : 상단 탭 1단으로 조정 -->
+            <!-- e : header-wrap -->
+      
+
+			<!-- s : contents-wrap -->
+			<div class="contents-wrap">
+				<link rel="stylesheet" href="../../resources/main/css/main.css"><!-- 201006 css 추가 :main에서만 사용 -->
+				<script src="../../resources/main/js/main.js"></script><!-- 201006 js 추가 :main에서만 사용 -->
+				<div class="main-wrap js-main-wrap">
+                    <!-- s : 로그인 & 개인화 설정 전 -->
+                    <div class="main-personalize-banner show">
+                        <img src="../../resources/images/main/main_foryou_banner.jpg" alt="">
+                        <button type="button" class="btn-main-more" data-popup-trigger data-target="#favioriteBrandSelect"><span class="eng">Choose your favorite</span><span>취향 선택하기</span></button>
+                        <div class="bottom-btn">
+                            <a href="#none" class="bbtn">오늘은 그만보기</a>
+                            <a href="#none" class="bbtn">닫기</a>
+                        </div>
+                    </div>
+                    <!-- e : 로그인 & 개인화 설정 전 -->
+                    <!-- s : 하단 띠 배너 : 메인노출 -->
+                    <div class="special-banner-wrap show up">
+                        <a href="#">무료 배송 (£200/€200/$250 이상 주문) &amp; 무료 반품</a>
+                        <button type="button" class="close"><span>close</span></button><!-- 하루동안 노출 X -->
+					</div>
+					<!-- e : 하단 띠 배너 : 메인노출 -->
+					<div class="swiper-wrapper">
+						<!-- s : For You -->
+						<div class="swiper-slide">
+                            <!-- s : 개인화 고도화 -->
+                            <div class="main-personalize-wrap">
+                                <div class="main-personalize">
+                                    <div class="select-item">
+                                        <button type="button" class="btn-add" data-popup-trigger data-target="#favioriteBrandSelect"><span>추가</span></button>
+                                    </div>
+                                    <div class="select-item">
+                                        <input type="radio" name="chkItem" id="personalize0">
+                                        <label for="personalize0">
+                                            <span class="brand-img" style="background-image:url(../../resources/images/temp/temp_foryou_brand_01.jpg)"></span>
+                                            <span class="brand-name">For you</span>
+                                        </label>
+                                    </div>
+                                    <div class="select-item">
+                                        <input type="radio" name="chkItem" id="personalize01">
+                                        <label for="personalize01">
+                                            <span class="brand-img" style="background-image:url(../../resources/images/temp/temp_foryou_brand_01.jpg)"></span>
+                                            <span class="brand-name">New</span>
+                                        </label>
+                                    </div>
+                                    <div class="select-item">
+                                        <input type="radio" name="chkItem" id="personalize02">
+                                        <label for="personalize02">
+                                            <span class="brand-img" style="background-image:url(../../resources/images/temp/temp_foryou_brand_01.jpg)"></span>
+                                            <span class="brand-name">Best</span>
+                                        </label>
+                                    </div>
+                                    <div class="select-item new"><!-- 업데이트 class .new-->
+                                        <input type="radio" name="chkItem" id="personalize03">
+                                        <label for="personalize03">
+                                            <span class="brand-img" style="background-image:url(../../resources/images/temp/temp_foryou_brand_01.jpg)"></span>
+                                            <span class="brand-name">andersonbell</span>
+                                        </label>
+                                    </div>
+                                    <div class="select-item">
+                                        <input type="radio" name="chkItem" id="personalize04">
+                                        <label for="personalize04">
+                                            <span class="brand-img" style="background-image:url(../../resources/images/temp/temp_foryou_brand_01.jpg)"></span>
+                                            <span class="brand-name">abc</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- e : 개인화 고도화 -->
+							
+							<!-- s: 200618 추가 | pc 메인 롤링 배너 동일하게 요청 -->
+							<!-- s: main visual -->
+							<div class="main-visual-banner-wrap">
+								<div class="main-visual-swiper swiper-wrapper">
+									<div class="main-visual-banner swiper-slide">
+										<a href="#">
+											<div class="video-box">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(https://cdn.eqlstore.com/display/category/THM/A02/A01/contents/28_122_3_KOR_20200616135933.jpg);"></span>
+												</span>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div>
+											<span class="banner-info-wrap">
+												<span class="banner-text"><span>1. 팔라스 2019 가을 컬렉션의 네 번째 발매 제품군</span></span>
+											</span>
+										</a>
+									</div>
+									<div class="main-visual-banner swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(https://cdn.eqlstore.com/display/category/THM/A02/A01/contents/28_81_1_KOR_20200610131218.jpg);"></span>
+											</span>
+											<span class="banner-info-wrap">
+												<span class="banner-text"><span>2. 팔라스 2019 가을 컬렉션의 네 번째 발매 제품군</span></span>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="swiper-page-number">
+									<span class="current"></span>
+									<span class="gap">/</span>
+									<span class="total">13</span>
+								</div>
+							</div>
+							<script>
+								$(function () {
+									var swiper;
+									if( $('.main-visual-banner-wrap .swiper-slide').length > 1 ) {
+										swiper = new Swiper('.main-visual-banner-wrap', {
+											init: false,
+											slidesPerView: 1,
+											spaceBetween: 0,
+											speed: 600,
+											loop: true,
+											autoplay: {
+												delay: 3000,
+											},
+											on: {
+											init: function() {
+												var totalNum = $('.main-visual-banner-wrap .swiper-slide').not('.swiper-slide-duplicate').length;
+												$(this.$el).find('.swiper-page-number .total').text(totalNum);
+												$(this.$el).find('.swiper-page-number .current').text(( this.realIndex + 1 ));
+											},
+											slideChange: function() {
+												$(this.$el).find('.swiper-page-number .current').text(( this.realIndex + 1 ));
+											}
+										},
+										});
+										swiper.init();
+									}
+								});
+							</script>
+							<!-- e: main visual -->							
+							<!-- e: 200618 추가 | pc 메인 롤링 배너 동일하게 요청 -->
+
+							<div class="main-prod-list-wrap">
+								<div class="prod-grid-list">
+									<!-- 20200519 : 두단짜리는 비디오 재생 사용하지 않기로 전달받음 -->
+									<!-- s : 200616 수정 | 개인화 영역 1페이지당 1개의 배너 노출로 변경 -->
+									<!-- 배너 + 레코픽,상품 합쳐서 25(레코픽 N + 상품 N) -->
+									<!-- s : 200616 첫번째 배너 세트 -->
+                                    <!-- 201006 리스트 수정
+                                        개인화 설정 > for you,new 선택시 > 상단롤링 + 배너N(최대 10개) + 상품 노출 : 배너의 갯수는 최대 10개이며, 레이아웃 변경 X 이대로 노출되어야함.
+                                        개인화 설정 > BEST,exclusive 선택시 > 상품 노출
+                                        개인화 설정 > 브랜드 선택시 > 상단롤링 + 상품 노출
+                                    -->
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">25,935</span>
+														<span class="prod-price-normal">39,000</span><!-- 200618 수정 : 정가표시 X css 처리 -->
+													</div>
+													<span class="discount-percent">34%</span>	                                                	
+												</div>
+												<div class="auto-badge-wrap"></div><!-- 200618 수정 : 뱃지 삭제 css 처리 -->
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">25,935</span>
+														<span class="prod-price-normal">39,000</span><!-- 200618 수정 : 정가표시 X css 처리 -->
+													</div>
+													<span class="discount-percent">34%</span>	                                                	
+												</div>
+												<div class="auto-badge-wrap"></div><!-- 200618 수정 : 뱃지 삭제 css 처리 -->
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">9,066,800</span>
+														<span class="prod-price-normal">9,086,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">9,066,800</span>
+														<span class="prod-price-normal">9,086,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">9,066,800</span>
+														<span class="prod-price-normal">9,086,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 해제</button>
+											</div>
+											<a class="info-wrap">
+												<span class="prod-brand-name">AEER AEER AEER AEER AEER AEER AEER AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">9,066,800</span>
+														<span class="prod-price-normal">9,086,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal selected">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-1">
+										<div class="prod-link prod-detail-link">
+											<div class="ratio-img-wrap">
+												<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+												</a>
+												<button type="button" class="btn-item-equal">이퀄 선택</button>
+											</div>
+											<a href="#" class="info-wrap">
+												<span class="prod-brand-name">AEER</span>
+												<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+												<div class="prod-price-wrap">
+													<div class="prod-price-value">
+														<span class="prod-price">66,800</span>
+														<span class="prod-price-normal">86,000</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="prod-item col-2">
+										<div class="prod-link">
+											<!-- <div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													</div>
+												</div>
+												<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+											</div> -->
+
+											<!-- 20200519 : 이미지 영역 및 링크로 변경 s -->
+											<div class="ratio-img-wrap">
+												<a href="/html/" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_foryou_banner.jpg);">
+													<span class="banner-text-wrap">
+														<span class="banner-text">개인화 이미지 배너 텍스트 01</span>
+														<span class="banner-text">개인화 이미지 배너 텍스트 02</span>
+													</span>
+												</a>											
+											</div>
+											<!-- //20200519 : 이미지 영역 및 링크로 변경 e -->
+										</div>
+									</div>
+									<!-- e : 200616 첫번째 배너 세트 -->
+								</div>
+							</div>
+						</div>
+						<!-- e : For You -->
+						<!-- s : Today -->
+						<div class="swiper-slide">
+							<!-- s: insider swiper -->
+							<div class="main-insider-wrap js-main-insider">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="insider-item-box">
+											<a href="#" class="insider-profile">
+												<!-- s: 200331 수정 || 이미지 등록 안 했을 경우 타입 추가 -->
+												<div class="ratio-img-wrap">A</div>
+												<!-- e: 200331 수정 || 이미지 등록 안 했을 경우 타입 추가 -->
+												<!-- s: 이미지 등록 했을 경우 -->
+												<!--
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/temp_insider_img.jpg)"></span>
+												</span>
+												-->
+												<!-- e: 이미지 등록 했을 경우 -->
+											</a>
+											<div class="insider-content-list-wrap">
+												<ul class="insider-content-list">
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img.jpg" alt="">
+														</button>
+													</li>
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img_2.jpg" alt="">
+														</button>
+													</li>
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img_3.jpg" alt="">
+														</button>
+													</li>
+												</ul>
+											</div>
+											<div class="box-footer">
+												<a href="#" class="insider-info">
+													<span class="insider-title">hyunseoc</span>
+													<span class="insider-post-count">332 <span class="unit">post</span></span>
+												</a>
+												<!--
+													DESC : 이퀄 선택 할 경우 ( 활성화 ) : [selected] 클래스 추가
+
+													** EX)
+													<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+												-->
+												<span class="insider-like-count">1,444</span>
+												<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="insider-item-box">
+											<a href="#" class="insider-profile">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/temp_insider_img.jpg)"></span>
+												</span>
+											</a>
+											<div class="insider-content-list-wrap">
+												<ul class="insider-content-list">
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img.jpg" alt="">
+														</button>
+													</li>
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img_2.jpg" alt="">
+														</button>
+													</li>
+													<li class="insider-item">
+														<button type="button" class="insider-content">
+															<img src="../..../../resources/images/temp/temp_story_img_3.jpg" alt="">
+														</button>
+													</li>
+												</ul>
+											</div>
+											<div class="box-footer">
+												<a href="#" class="insider-info">
+													<span class="insider-title">hyunseoc</span>
+													<span class="insider-post-count">332 <span class="unit">post</span></span>
+												</a>
+												<!--
+													DESC : 이퀄 선택 할 경우 ( 활성화 ) : [selected] 클래스 추가
+
+													** EX)
+													<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+												-->
+												<span class="insider-like-count">1,444</span>
+												<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- e: insider swiper -->
+							<div class="main-text-wrap">
+								<!-- s: html 영역 -->
+								<div class="editor-wrap">
+									Outwear Underwear Shoes Sneakers Shirts <span style="text-decoration: underline;">Dress</span> Short-sleeves Socks
+									Beauty Jewelery <span style="text-decoration: underline;">Wallets</span> Books Magazine Clothing Accessories Knitwear
+									Skirt Audio Technology Tote Bags Swimwear Eyewear Jumpsuit
+								</div>
+								<!-- e: html 영역 -->
+							</div>
+							<div class="main-today-box">
+								<div class="main-today-img-video-box js-today-img-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../resources/images/temp/temp_main_today.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="../../resources/images/temp/temp_main_today_long.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_today_video.jpg);"></div>
+													<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-scrollbar"></div>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="ratio-img-wrap">
+												<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg);"></div>
+											</div>
+											<div class="profile-detail">
+												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
+												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들 JIL SANDER 19SS</p>
+										<!-- s: more text -->
+										<!--
+											DESC :
+											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
+										-->
+										<div class="more-text-wrap">
+											<span class="text">
+												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었
+											</span>
+											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
+										</div>
+										<!-- e: more text -->
+									</div>
+
+									<button type="button" class="btn-today-product" data-popup-trigger data-target="#taggedProdList">Product</button>
+									<button type="button" class="btn-main-more"><span class="eng">Learn More</span><span>더 자세한 내용 보러 가기</span></button>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="main-today-img-video-box">
+									<img src="../../resources/images/temp/temp_main_today.jpg" alt="">
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="ratio-img-wrap">
+												<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg);"></div>
+											</div>
+											<div class="profile-detail">
+												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
+												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들</p>
+										<!-- s: more text -->
+										<!--
+											DESC :
+											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
+										-->
+										<div class="more-text-wrap is-more">
+											<span class="text">
+												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었다. 세번째 에피의 주인공 끌어올리며, 트랜스 커뮤니티에 대한 인식 변화를 추구하고 있다. 사람들에게 영감을 주는 그녀의 예술 활동들을 구찌와 지큐가 함께 독특한 영상미를 담아 소개한다.
+											</span>
+											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
+										</div>
+										<!-- e: more text -->
+									</div>
+
+									<button type="button" class="btn-today-product" data-popup-trigger data-target="#taggedProdList">Product</button>
+									<button type="button" class="btn-main-more"><span class="eng">Learn More</span><span>더 자세한 내용 보러 가기</span></button>
+								</div>
+							</div>
+
+							<!-- s: Recommend Item -->
+							<div class="main-today-box">
+								<p class="today-box-title">Recommend Item</p>
+								<div class="main-recommend-wrap js-recommend-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="prod-item">
+												<div class="prod-link">
+													<div class="ratio-img-wrap">
+														<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+																<span class="manual-badge-wrap">
+																	<span class="manual-badge">Excluisive</span>
+																	<span class="manual-badge spot">Sale d-4</span>
+																</span>
+														</a>
+														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+													</div>
+													<a class="info-wrap">
+														<span class="prod-brand-name">AEER</span>
+														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+														<span class="prod-price-wrap">
+																<span class="prod-price-value">
+																	<span class="prod-price">9,066,800</span>
+																	<span class="prod-price-normal">9,086,000</span>
+																</span>
+																<span class="discount-percent">20%</span>
+															</span>
+														<span class="auto-badge-wrap">
+																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+															</span>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="prod-item">
+												<div class="prod-link">
+													<div class="ratio-img-wrap">
+														<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+																<span class="manual-badge-wrap">
+																	<span class="manual-badge">Excluisive</span>
+																	<span class="manual-badge spot">Sale d-4</span>
+																</span>
+														</a>
+														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+													</div>
+													<a class="info-wrap">
+														<span class="prod-brand-name">AEER</span>
+														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+														<span class="prod-price-wrap">
+																<span class="prod-price-value">
+																	<span class="prod-price">9,066,800</span>
+																	<span class="prod-price-normal">9,086,000</span>
+																</span>
+																<span class="discount-percent">20%</span>
+															</span>
+														<span class="auto-badge-wrap">
+																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+															</span>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="prod-item">
+												<div class="prod-link">
+													<div class="ratio-img-wrap">
+														<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+																<span class="manual-badge-wrap">
+																	<span class="manual-badge">Excluisive</span>
+																	<span class="manual-badge spot">Sale d-4</span>
+																</span>
+														</a>
+														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+													</div>
+													<a class="info-wrap">
+														<span class="prod-brand-name">AEER</span>
+														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+														<span class="prod-price-wrap">
+																<span class="prod-price-value">
+																	<span class="prod-price">9,066,800</span>
+																	<span class="prod-price-normal">9,086,000</span>
+																</span>
+																<span class="discount-percent">20%</span>
+															</span>
+														<span class="auto-badge-wrap">
+																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+															</span>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="prod-item">
+												<div class="prod-link">
+													<div class="ratio-img-wrap">
+														<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+																<span class="manual-badge-wrap">
+																	<span class="manual-badge">Excluisive</span>
+																	<span class="manual-badge spot">Sale d-4</span>
+																</span>
+														</a>
+														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+													</div>
+													<a class="info-wrap">
+														<span class="prod-brand-name">AEER</span>
+														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+														<span class="prod-price-wrap">
+																<span class="prod-price-value">
+																	<span class="prod-price">9,066,800</span>
+																	<span class="prod-price-normal">9,086,000</span>
+																</span>
+																<span class="discount-percent">20%</span>
+															</span>
+														<span class="auto-badge-wrap">
+																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+															</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e: Recommend Item -->
+							<div class="main-today-box">
+								<div class="main-today-img-video-box js-today-img-swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../resources/images/temp/temp_main_today.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="../../resources/images/temp/temp_main_today_long.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<div class="video-box">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_main_today_video.jpg);"></div>
+													<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-scrollbar"></div>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="ratio-img-wrap">
+												<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg);"></div>
+											</div>
+											<div class="profile-detail">
+												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
+												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들 JIL SANDER 19SS</p>
+										<!-- s: more text -->
+										<!--
+											DESC :
+											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
+										-->
+										<div class="more-text-wrap">
+											<span class="text">
+												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었
+											</span>
+											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
+										</div>
+										<!-- e: more text -->
+									</div>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="main-today-img-video-box">
+									<img src="../../resources/images/temp/temp_main_today.jpg" alt="">
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="ratio-img-wrap">
+												<div class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg);"></div>
+											</div>
+											<div class="profile-detail">
+												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
+												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들</p>
+										<!-- s: more text -->
+										<!--
+											DESC :
+											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
+										-->
+										<div class="more-text-wrap is-more">
+											<span class="text">
+												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었다. 세번째 에피의 주인공 끌어올리며, 트랜스 커뮤니티에 대한 인식 변화를 추구하고 있다. 사람들에게 영감을 주는 그녀의 예술 활동들을 구찌와 지큐가 함께 독특한 영상미를 담아 소개한다.
+											</span>
+											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
+										</div>
+										<!-- e: more text -->
+									</div>
+								</div>
+							</div>
+							<!-- s: Season Keywor -->
+							<div class="main-today-box">
+								<p class="today-box-title">Season Keyword</p>
+								<!-- s:prd swiper -->
+								<div class="thumb-list-swiper-wrap js-thumb-list-swiper">
+									<div class="swiper-wrapper">
+										<!-- s: thumb box -->
+										<div class="thumb-item-box swiper-slide">
+											<a href="" class="box-link">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
+													<span class="img-text-wrap">
+														<span class="editor-wrap">Oversize Knit</span>
+														<span class="editor-wrap">오버사이즈 니트</span>
+													</span>
+												</span>
+											</a>
+										</div>
+										<!-- e: thumb box -->
+										<!-- s: thumb box -->
+										<div class="thumb-item-box swiper-slide">
+											<a href="" class="box-link">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
+													<span class="img-text-wrap">
+														<span class="editor-wrap">Oversize Knit</span>
+														<span class="editor-wrap">오버사이즈 니트</span>
+													</span>
+												</span>
+											</a>
+										</div>
+										<!-- e: thumb box -->
+										<!-- s: thumb box -->
+										<div class="thumb-item-box swiper-slide">
+											<a href="" class="box-link">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
+													<span class="img-text-wrap">
+														<span class="editor-wrap">Oversize Knit</span>
+														<span class="editor-wrap">오버사이즈 니트</span>
+													</span>
+												</span>
+											</a>
+										</div>
+										<!-- e: thumb box -->
+										<!-- s: thumb box -->
+										<div class="thumb-item-box swiper-slide">
+											<a href="" class="box-link">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(../..../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
+													<span class="img-text-wrap">
+														<span class="editor-wrap">Oversize Knit</span>
+														<span class="editor-wrap">오버사이즈 니트</span>
+													</span>
+												</span>
+											</a>
+										</div>
+										<!-- e: thumb box -->
+									</div>
+								</div>
+								<!-- e:prd swiper -->
+							</div>
+							<!-- e: Season Keywor -->
+						</div>
+						<!-- e : Today -->
+					</div>
+				</div>
+
+				<!-- s: popup - For you 관심 브랜드 등록 팝업 -->
+				<div id="favioriteBrandSelect" class="ui-dialog-contents" data-class="dialog-full">
+					<div class="dialog-title">
+						<div class="pop-title">FOR YOU</div>
+					</div>
+					<div class="dialog-contents">
+						<div class="dialog-contents-flex fixed">
+							<div class="brand-select-wrap step01"><!-- 스텝 구분 class .step01 .step02 .step03 -->
+								<div class="brand-select-title-wrap">
+                                    <p class="brand-select-title">성별을 선택해주세요.</p>
+                                    <p class="brand-select-title">좋아하는 키워드를 선택해주세요.</p><!-- e: step 2. 성별 선택 후 노출 -->
+                                    <p class="brand-select-title">관심있는 브랜드를 선택해주세요.</p><!-- e: step 3. 키워드 선택 후 노출 -->
+                                    
+                                    <p class="brand-select-desc">나만을 위한 상품추천이 홈화면에 보여집니다.</p><!-- e: step 2. 성별 선택 후 노출 -->
+                                </div>
+                                <!-- s : 성별선택 -->
+								<div class="gender-select-list">
+									<div class="gender-select-item">
+										<input type="radio" name="rdoBrandSelectItem" id="genderSelectItem1">
+										<label for="genderSelectItem1">
+											<span class="gender-img">
+												<img src="../../resources/images/main/main_foryou_brand_woman.png" alt="">
+											</span>
+											<span class="brand-name">WOMAN</span>
+										</label>
+									</div>
+									<div class="gender-select-item">
+										<input type="radio" name="rdoBrandSelectItem" id="genderSelectItem2">
+										<label for="genderSelectItem2">
+											<span class="gender-img">
+												<img src="../../resources/images/main/main_foryou_brand_man.png" alt="">
+											</span>
+											<span class="brand-name">MAN</span>
+										</label>
+									</div>
+									<div class="gender-select-item">
+										<input type="radio" name="rdoBrandSelectItem" id="genderSelectItem3">
+										<label for="genderSelectItem3">
+											<span class="gender-img">
+												<img src="../../resources/images/main/main_foryou_brand_no.png" alt="">
+											</span>
+											<span class="brand-name">NO, THANKS</span>
+										</label>
+									</div>
+                                </div>
+                                <!-- e : 성별선택 -->
+
+                                <!-- s : 키워드리스트 -->
+								<div class="brand-select-list key-select">
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem1">
+										<label for="brandSelectItem1">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">SYSTEM</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem2">
+										<label for="brandSelectItem2">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">90s</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem3">
+										<label for="brandSelectItem3">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">걸리쉬</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem4">
+										<label for="brandSelectItem4">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">SYSTEM</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem5">
+										<label for="brandSelectItem5">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">해체주의</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem6">
+										<label for="brandSelectItem6">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">STUDIO TOMBOY</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem7">
+										<label for="brandSelectItem7">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">SYSTEM</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem8">
+										<label for="brandSelectItem8">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">A.P.C</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem9">
+										<label for="brandSelectItem9">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">STUDIO TOMBOY</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem10">
+										<label for="brandSelectItem10">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">SYSTEM</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem11">
+										<label for="brandSelectItem11">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">A.P.C</span>
+										</label>
+									</div>
+                                </div>
+                                <!-- e : 키워드리스트 -->
+
+                                <!-- s : 브랜드리스트 -->
+								<div class="brand-select-list last-list">
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem21">
+										<label for="brandSelectItem21">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">앤더슨벨</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem22">
+										<label for="brandSelectItem22">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">더뮤지엄 <br>비지터</span>
+										</label>
+									</div>
+									<div class="brand-select-item">
+										<input type="checkbox" name="chkBrandSelectItem" id="brandSelectItem23">
+										<label for="brandSelectItem23">
+										    <span class="brand-img" style="background-image: url(../../resources/images/temp/temp_foryou_brand_01.jpg);"></span>
+											<span class="brand-name">STUDIO TOMBOY</span>
+										</label>
+									</div>
+                                </div>
+                                <!-- e : 브랜드리스트 -->
+							</div>
+							<!-- s: button wrap -->
+							<div class="btn-even-wrap">
+                                <div class="pbtn next">
+                                    <span>5가지 이상 선택해주세요.</span>
+                                    <span class="num"></span>
+                                </div>
+                                <button type="button" class="pbtn prev"><span class="inner-text">이전</span></button>
+                                <button type="button" class="pbtn next2"><span class="inner-text">다음</span></button>
+                                <button type="button" class="pbtn finish"><span class="inner-text">완료</span></button>
+							</div>
+							<!-- e: button wrap -->
+						</div>
+					</div>
+				</div>
+				<!-- e: popup - For you 관심 브랜드 등록 팝업 -->
+
+				<!-- s: popup - bottom -->
+				<div id="taggedProdList" class="ui-dialog-contents dialog-tagged-prod" data-class="dialog-bottom">
+					<div class="dialog-title">
+						<div class="pop-title">태그된 제품</div>
+					</div>
+					<div class="dialog-contents">
+						<!-- s: prod-grid-list -->
+						<div class="prod-grid-list">
+							<!-- s: prod-item || equal select type -->
+							<div class="prod-item">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item || equal select type -->
+							<!-- s: prod-item -->
+							<div class="prod-item">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item -->
+							<!-- s: prod-item(sold-out) || equal select type -->
+							<div class="prod-item sold-out">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">Sold Out</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item(sold-out) || equal select type -->
+							<!-- s: prod-item(sold-out) -->
+							<div class="prod-item sold-out">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">Sold Out</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item(sold-out) -->
+							<!-- s: prod-item || equal select type -->
+							<div class="prod-item">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item || equal select type -->
+							<!-- s: prod-item -->
+							<div class="prod-item">
+								<div class="prod-link">
+									<div class="ratio-img-wrap">
+										<a href="#" class="img-viewer" style="background-image: url(../../resources/images/temp/temp_prod_img.jpg), url(../../resources/images/common/comn_no_img_3by4.png);">
+											<span class="manual-badge-wrap">
+												<span class="manual-badge">Excluisive</span>
+												<span class="manual-badge">Pre Order</span>
+											</span>
+										</a>
+										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+									</div>
+									<a class="info-wrap">
+										<span class="prod-brand-name">AEER</span>
+										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
+										<span class="prod-price-wrap">
+											<span class="prod-price-value">
+												<span class="prod-price">9,066,800</span>
+												<span class="prod-price-normal">9,086,000</span>
+											</span>
+											<span class="discount-percent">20%</span>
+										</span>
+										<span class="auto-badge-wrap">
+											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							<!-- e: prod-item -->
+						</div>
+						<!-- e: prod-grid-list -->
+					</div>
+				</div>
+				<!-- e: popup - bottom -->
+			</div>
+			<!-- e : contents-wrap -->
+
+			<!-- s: bottom flex nav -->
+			<!--
+				: DESC
+				- [special-banner-wrap]가 있을 경우 : [bottom-fix-nav] div에 [has-banner] 클래스 추가
+			-->
+			<div class="bottom-fix-nav">
+				<div class="quick-menu">
+					<a href="#" class="btn-arrow-back"><span>back</span></a>
+					<a href="#top" class="btn-arrow-top"><span>TOP</span></a>
+				</div>
+
+				<!-- s: prod-control-fix-wrap -->
+				<!--<div class="prod-control-fix-wrap">
+					<div class="category-btn-wrap">
+						<button type="button" class="btn-control-view js-btn-control-view" data-popup-trigger data-target="#dialogProdFilter"><span class="inner-text">Filter</span></button>
+						<button type="button" class="btn-control-view" data-popup-trigger data-target="#dialogProdSort"><span class="inner-text">New</span></button>
+
+						&lt;!&ndash; s: dialog - filter &ndash;&gt;
+						<div id="dialogProdFilter" class="ui-dialog-contents" data-class="dialog-bottom">
+							<div class="toggle-title-box">
+								<div class="toggle-title">FILTER</div>
+								<div class="right-box">
+									<button type="button" class="btn-pop-close" data-layer-close>
+										<span class="count">1,423</span>
+										<span class="ico-toggle"></span>
+									</button>
+								</div>
+							</div>
+							<div class="dialog-contents">
+								<div class="cont-padding">
+									<div class="filter-wrap">
+										<div class="tab-wrap filter-tab js-tab">
+											<ul class="tabs">
+												<li class="tab-item"><a href="#tabFilter1" class="tab-link">카테고리<span class="cnt">(23)</span></a></li>
+												<li class="tab-item"><a href="#tabFilter2" class="tab-link">브랜드<span class="cnt">(33)</span></a></li>
+												<li class="tab-item"><a href="#tabFilter3" class="tab-link">가격<span class="cnt">(3)</span></a></li>
+												<li class="tab-item"><a href="#tabFilter4" class="tab-link">사이즈<span class="cnt"></span></a></li>
+												<li class="tab-item"><a href="#tabFilter5" class="tab-link">컬러<span class="cnt"></span></a></li>
+											</ul>
+
+											&lt;!&ndash; s : 카테고리 필터 &ndash;&gt;
+											<div id="tabFilter1" class="tab-content filter-category">
+												<ul class="ui-col-list fold-box-list js-fold" data-type="multi">
+													&lt;!&ndash;s : 1depth&ndash;&gt;
+													<li>
+														<span class="ui-rdo">
+															<input id="radioCategoryAll" type="radio" name="rdoCategoryList">
+															<label for="radioCategoryAll">All</label>
+														</span>
+													</li>
+													&lt;!&ndash;e : 1depth&ndash;&gt;
+													&lt;!&ndash;s : 1depth&ndash;&gt;
+													<li>
+														<span class="ui-rdo">
+															<input id="radioCategory01" type="radio" name="rdoCategoryList">
+															<label for="radioCategory01">WOMEN(32)</label>
+														</span>
+														&lt;!&ndash;s : 2depth&ndash;&gt;
+														<ul>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory01Sub01" type="checkbox">
+																		<label for="chkCategory01Sub01">CLOTHING(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-01" type="checkbox">
+																				<label for="chkCategory01Sub01-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-02" type="checkbox">
+																				<label for="chkCategory01Sub01-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-03" type="checkbox">
+																				<label for="chkCategory01Sub01-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-04" type="checkbox">
+																				<label for="chkCategory01Sub01-04">SKIRT(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-05" type="checkbox">
+																				<label for="chkCategory01Sub01-05">PANTS(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-06" type="checkbox">
+																				<label for="chkCategory01Sub01-06">LEG. UNDERWEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub01-07" type="checkbox">
+																				<label for="chkCategory01Sub01-07">ACTIVEWEAR(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory01Sub02" type="checkbox">
+																		<label for="chkCategory01Sub02">SHOES(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub02-01" type="checkbox">
+																				<label for="chkCategory01Sub02-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub02-02" type="checkbox">
+																				<label for="chkCategory01Sub02-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub02-03" type="checkbox">
+																				<label for="chkCategory01Sub02-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory01Sub03" type="checkbox">
+																		<label for="chkCategory01Sub03">ACC(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-01" type="checkbox">
+																				<label for="chkCategory01Sub03-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-02" type="checkbox">
+																				<label for="chkCategory01Sub03-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-03" type="checkbox">
+																				<label for="chkCategory01Sub03-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-04" type="checkbox">
+																				<label for="chkCategory01Sub03-04">SKIRT(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-05" type="checkbox">
+																				<label for="chkCategory01Sub03-05">PANTS(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-06" type="checkbox">
+																				<label for="chkCategory01Sub03-06">LEG. UNDERWEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory01Sub03-07" type="checkbox">
+																				<label for="chkCategory01Sub03-07">ACTIVEWEAR(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+														</ul>
+														&lt;!&ndash;e : 2depth&ndash;&gt;
+													</li>
+													&lt;!&ndash;s : 1depth&ndash;&gt;
+													&lt;!&ndash;e : 1depth&ndash;&gt;
+													<li>
+														<span class="ui-rdo">
+															<input id="radioCategory02" type="radio" name="rdoCategoryList">
+															<label for="radioCategory02">MEN(15)</label>
+														</span>
+														&lt;!&ndash;s : 2depth&ndash;&gt;
+														<ul>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory02Sub01" type="checkbox">
+																		<label for="chkCategory02Sub01">CLOTHING(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-01" type="checkbox">
+																				<label for="chkCategory02Sub01-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-02" type="checkbox">
+																				<label for="chkCategory02Sub01-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-03" type="checkbox">
+																				<label for="chkCategory02Sub01-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-04" type="checkbox">
+																				<label for="chkCategory02Sub01-04">SKIRT(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-05" type="checkbox">
+																				<label for="chkCategory02Sub01-05">PANTS(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-06" type="checkbox">
+																				<label for="chkCategory02Sub01-06">LEG. UNDERWEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub01-07" type="checkbox">
+																				<label for="chkCategory02Sub01-07">ACTIVEWEAR(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory02Sub02" type="checkbox">
+																		<label for="chkCategory02Sub02">SHOES(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub02-01" type="checkbox">
+																				<label for="chkCategory02Sub02-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub02-02" type="checkbox">
+																				<label for="chkCategory02Sub02-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub02-03" type="checkbox">
+																				<label for="chkCategory02Sub02-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+															<li class="fold-box">
+																<div class="fold-box-header">
+																	<span class="ui-chk">
+																		<input id="chkCategory02Sub03" type="checkbox">
+																		<label for="chkCategory02Sub03">LIFE(15)</label>
+																	</span>
+																</div>
+
+																<div class="fold-box-contents">
+																	&lt;!&ndash;s : 3depth&ndash;&gt;
+																	<ul>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-01" type="checkbox">
+																				<label for="chkCategory02Sub03-01">OUTER(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-02" type="checkbox">
+																				<label for="chkCategory01Sub03-02">KNIT WEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-03" type="checkbox">
+																				<label for="chkCategory02Sub03-03">ONE-PIECE(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-04" type="checkbox">
+																				<label for="chkCategory02Sub03-04">SKIRT(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-05" type="checkbox">
+																				<label for="chkCategory02Sub03-05">PANTS(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-06" type="checkbox">
+																				<label for="chkCategory02Sub03-06">LEG. UNDERWEAR(15)</label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="ui-chk">
+																				<input id="chkCategory02Sub03-07" type="checkbox">
+																				<label for="chkCategory02Sub03-07">ACTIVEWEAR(15)</label>
+																			</span>
+																		</li>
+																	</ul>
+																	&lt;!&ndash;e : 3depth&ndash;&gt;
+																</div>
+															</li>
+														</ul>
+														&lt;!&ndash;e : 2depth&ndash;&gt;
+													</li>
+													&lt;!&ndash;e : 1depth&ndash;&gt;
+												</ul>
+											</div>
+											&lt;!&ndash; e : 카테고리 필터 &ndash;&gt;
+											&lt;!&ndash; s : 브랜드 필터 &ndash;&gt;
+											<div id="tabFilter2" class="tab-content filter-brand">
+												<div class="brand-list-wrap">
+													<span class="filter-title" id="filterBrandA">A</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandA01" type="checkbox">
+																<label for="chkBrandA01"><span class="brand-name">ADIDAS</span><span class="cnt">(99+)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandA02" type="checkbox">
+																<label for="chkBrandA02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(15)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandA03" type="checkbox">
+																<label for="chkBrandA03"><span class="brand-name">ASICS</span><span class="cnt">(15)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandA04" type="checkbox">
+																<label for="chkBrandA04"><span class="brand-name">ASICS TIGER</span><span class="cnt">(15)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandA05" type="checkbox">
+																<label for="chkBrandA05"><span class="brand-name">AMBITIOUS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandB">B</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB01" type="checkbox">
+																<label for="chkBrandB01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB02" type="checkbox">
+																<label for="chkBrandB02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB03" type="checkbox">
+																<label for="chkBrandB03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB04" type="checkbox">
+																<label for="chkBrandB04"><span class="brand-name">ASICS TIGER</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB05" type="checkbox">
+																<label for="chkBrandB05"><span class="brand-name">AMBITIOUS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB06" type="checkbox">
+																<label for="chkBrandB06"><span class="brand-name">Acne Studio</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB07" type="checkbox">
+																<label for="chkBrandB07"><span class="brand-name">Adererror</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB08" type="checkbox">
+																<label for="chkBrandB08"><span class="brand-name">Aeer</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB09" type="checkbox">
+																<label for="chkBrandB09"><span class="brand-name">ASICS ASICS ASICS ASICS ASICS ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandB10" type="checkbox">
+																<label for="chkBrandB10"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandC">C</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandC01" type="checkbox">
+																<label for="chkBrandC01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandC02" type="checkbox">
+																<label for="chkBrandC02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandC03" type="checkbox">
+																<label for="chkBrandC03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandD">D</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandD01" type="checkbox">
+																<label for="chkBrandD01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandD02" type="checkbox">
+																<label for="chkBrandD02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandD03" type="checkbox">
+																<label for="chkBrandD03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandE">E</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandE01" type="checkbox">
+																<label for="chkBrandE01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandE02" type="checkbox">
+																<label for="chkBrandE02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandE03" type="checkbox">
+																<label for="chkBrandE03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandF">F</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandF01" type="checkbox">
+																<label for="chkBrandF01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandF02" type="checkbox">
+																<label for="chkBrandF02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandF03" type="checkbox">
+																<label for="chkBrandF03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandG">G</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandG01" type="checkbox">
+																<label for="chkBrandG01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandG02" type="checkbox">
+																<label for="chkBrandG02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandG03" type="checkbox">
+																<label for="chkBrandG03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+
+													<span class="filter-title" id="filterBrandNum">123</span>
+													<ul class="ui-col-list">
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandNum01" type="checkbox">
+																<label for="chkBrandNum01"><span class="brand-name">ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandNum02" type="checkbox">
+																<label for="chkBrandNum02"><span class="brand-name">ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS ADIDAS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+														<li>
+															<span class="ui-chk">
+																<input id="chkBrandNum03" type="checkbox">
+																<label for="chkBrandNum03"><span class="brand-name">ASICS</span><span class="cnt">(22)</span></label>
+															</span>
+														</li>
+													</ul>
+												</div>
+
+												<div class="anchor-list-wrap js-brand-filter-swiper">
+													<div class="anchor-list swiper-wrapper">
+														&lt;!&ndash;
+															DESC :
+															- filter-title id값과 btn-anchor data-target 속성값을 동일하게 맞춰주세요
+															- 브랜드 목록이 없는경우 btn-anchor disabled 속성 추가해주세요
+														&ndash;&gt;
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandA">A</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandB">B</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandC">C</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandD">D</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandE">E</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandF">F</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandG">G</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															&lt;!&ndash; DESC : 브랜드 없는경우 disabled 추가 &ndash;&gt;
+															<button type="button" class="btn-anchor" data-target="#filterBrandH" disabled>H</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandI" disabled>I</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandJ" disabled>J</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandK" disabled>K</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandL" disabled>L</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandM" disabled>M</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandN" disabled>N</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandO" disabled>O</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandP" disabled>P</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandQ" disabled>Q</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandR" disabled>R</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandS" disabled>S</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandT" disabled>T</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandU" disabled>U</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandV" disabled>V</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandW" disabled>W</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandX" disabled>X</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandY" disabled>Y</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandZ" disabled>Z</button>
+														</div>
+														<div class="anchor-item swiper-slide">
+															<button type="button" class="btn-anchor" data-target="#filterBrandNum">123</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											&lt;!&ndash; e : 브랜드 필터 &ndash;&gt;
+											&lt;!&ndash; s : 가격 필터 &ndash;&gt;
+											<div id="tabFilter3" class="tab-content filter-price">
+												<ul class="ui-col-list">
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice01" type="checkbox" checked>
+															<label for="chkPrice01">~50,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice02" type="checkbox">
+															<label for="chkPrice02">50,000 ~ 100,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice03" type="checkbox" checked>
+															<label for="chkPrice03">100,000 ~ 200,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice04" type="checkbox">
+															<label for="chkPrice04">200,000 ~ 300,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice05" type="checkbox">
+															<label for="chkPrice05">200,000 ~ 300,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice06" type="checkbox" checked>
+															<label for="chkPrice06">200,000 ~ 300,000</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkPrice07" type="checkbox">
+															<label for="chkPrice07">1,000,000</label>
+														</span>
+													</li>
+												</ul>
+											</div>
+											&lt;!&ndash; e : 가격 필터 &ndash;&gt;
+											&lt;!&ndash; s : 사이즈 필터 &ndash;&gt;
+											<div id="tabFilter4" class="tab-content filter-size">
+												<span class="filter-title">CLOTHES SIZE</span>
+												<ul class="ui-col-list">
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub01" type="checkbox">
+															<label for="chkSize01Sub01">XSS</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub02" type="checkbox">
+															<label for="chkSize01Sub02">XS</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub03" type="checkbox">
+															<label for="chkSize01Sub03">S</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub04" type="checkbox">
+															<label for="chkSize01Sub04">M</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub05" type="checkbox">
+															<label for="chkSize01Sub05">L</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize01Sub06" type="checkbox">
+															<label for="chkSize01Sub06">XXL</label>
+														</span>
+													</li>
+												</ul>
+
+												<span class="filter-title">SHOES SIZE</span>
+												<ul class="ui-col-list">
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub01" type="checkbox">
+															<label for="chkSize02Sub01">220</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub02" type="checkbox">
+															<label for="chkSize02Sub02">225</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub03" type="checkbox">
+															<label for="chkSize02Sub03">230</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub04" type="checkbox">
+															<label for="chkSize02Sub04">235</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub05" type="checkbox">
+															<label for="chkSize02Sub05">240</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkSize02Sub06" type="checkbox">
+															<label for="chkSize02Sub06">245</label>
+														</span>
+													</li>
+												</ul>
+											</div>
+											&lt;!&ndash; e : 사이즈 필터 &ndash;&gt;
+											&lt;!&ndash; s : 컬러 필터 &ndash;&gt;
+											<div id="tabFilter5" class="tab-content filter-color">
+												<ul class="ui-col-list">
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor01" type="checkbox">
+															<label for="chkColor01">BLACK</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor02" type="checkbox">
+															<label for="chkColor02">NAVY</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor03" type="checkbox">
+															<label for="chkColor03">GERY</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor04" type="checkbox">
+															<label for="chkColor04">BLUE</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor05" type="checkbox">
+															<label for="chkColor05">NEUTRAL</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor06" type="checkbox">
+															<label for="chkColor06">METALLIC</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor07" type="checkbox">
+															<label for="chkColor07">BROWN</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor08" type="checkbox">
+															<label for="chkColor08">PINK</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor09" type="checkbox">
+															<label for="chkColor09">TAN</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor10" type="checkbox">
+															<label for="chkColor10">BURGUNDY</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor11" type="checkbox">
+															<label for="chkColor11">PRINT</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor12" type="checkbox">
+															<label for="chkColor12">WHITE</label>
+														</span>
+													</li>
+													<li>
+														<span class="ui-chk">
+															<input id="chkColor13" type="checkbox">
+															<label for="chkColor13">CARMEL</label>
+														</span>
+													</li>
+												</ul>
+											</div>
+											&lt;!&ndash; e : 컬러 필터 &ndash;&gt;
+										</div>
+
+										<div class="selected-filter-wrap">
+											&lt;!&ndash; DESC : 선택한 필터 없는 경우 selected-filter-wrap DOM 구조 삭제 &ndash;&gt;
+											<div class="filter-tag-wrap swiper-wrapper">
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">11A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">1110,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">22A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">2210,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">33A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">3310,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">44A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">4410,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">55A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">5510,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">66A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">6610,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">77A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">7710,000원 이하</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">88A.P.C</span>
+													</button>
+												</div>
+												<div class="filter-tag swiper-slide">
+													<button type="button" class="btn-remove-filter">
+														<span class="filter-name">8810,000원 이하</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btn-even-wrap">
+										<button type="button" class="btn"><span class="inner-text">초기화</span></button>
+										<button type="button" class="btn btn-black"><span class="inner-text">검색</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						&lt;!&ndash; e: dialog - filter &ndash;&gt;
+
+						&lt;!&ndash; s: dialog - sort &ndash;&gt;
+						<div id="dialogProdSort" class="ui-dialog-contents" data-class="dialog-bottom">
+							<div class="toggle-title-box">
+								<div class="toggle-title">SORT</div>
+								<div class="right-box">
+									<button type="button" class="btn-pop-close" data-layer-close><span class="ico-toggle"></span></button>
+								</div>
+							</div>
+							<div class="dialog-contents">
+								<div class="cont-padding">
+									<div class="control-list-wrap">
+										<ul class="category-list">
+											<li class="category-item">
+												&lt;!&ndash; DESC : 선택된 button selected class 추가 &ndash;&gt;
+												<button type="button" class="btn-sort-value selected"><span class="inner-text">New</span></button>
+											</li>
+											<li class="category-item">
+												<button type="button" class="btn-sort-value"><span class="inner-text">Best</span></button>
+											</li>
+											<li class="category-item">
+												<button type="button" class="btn-sort-value"><span class="inner-text">Price (Low-High)</span></button>
+											</li>
+											<li class="category-item">
+												<button type="button" class="btn-sort-value"><span class="inner-text">Price (High-Low)</span></button>
+											</li>
+											<li class="category-item">
+												<button type="button" class="btn-sort-value"><span class="inner-text">Review</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						&lt;!&ndash; e: dialog - sort &ndash;&gt;
+					</div>
+				</div>-->
+				<!-- e: prod-control-fix-wrap -->
+
+				<div class="docker-box">
+					<a href="#" class="btn-menu"><i></i><span>Menu</span></a>
+					<a href="#" class="btn-search"><i></i><span>Search</span></a>
+					<a href="#" class="btn-home"><i></i><span>Home</span></a>
+					<a href="#" class="btn-equal"><i></i><span>EQUAL</span></a>
+					<a href="#" class="btn-mypage"><i></i><span>MY</span></a>
+				</div>
+			</div>
+			<!-- s: bottom flex nav -->
+
+			<!-- s : footer-wrap -->
+			<div id="footerWrap" class="footer-wrap">
+				<div class="sns-link-box">
+					<a href="#" class="sns-link youtube" target="_blank"><span>youtube</span></a>
+					<a href="#" class="sns-link facebook" target="_blank"><span>facebook</span></a>
+					<a href="#" class="sns-link instagram" target="_blank"><span>instagram</span></a>
+					<a href="#" class="sns-link pcver" target="_blank"><span>PC ver</span></a>
+				</div>
+				<ul class="fold-box-list js-fold">
+					<li class="fold-box">
+						<!--S : toggle-title-box-->
+						<a href="#" class="toggle-title-box">
+							<div class="toggle-title">About EQL</div>
+						</a>
+						<!--E : toggle-title-box-->
+					</li>
+					<li class="fold-box">
+						<div class="fold-box-header">
+							<!--S : toggle-title-box-->
+							<div class="toggle-title-box">
+								<div class="toggle-title">MY order</div>
+								<div class="right-box">
+									<span class="ico-toggle is-reverse"></span>
+								</div>
+							</div>
+							<!--E : toggle-title-box-->
+						</div>
+						<div class="fold-box-contents">
+							<ul class="sub-menu-list">
+								<li class="list-item"><a href="" class="sub-title">주문/교환/반품/취소</a></li>
+								<li class="list-item"><a href="" class="sub-title">상품리뷰</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="fold-box">
+						<div class="fold-box-header">
+							<!--S : toggle-title-box-->
+							<div class="toggle-title-box">
+								<div class="toggle-title">Help</div>
+								<div class="right-box">
+									<span class="ico-toggle is-reverse"></span>
+								</div>
+							</div>
+							<!--E : toggle-title-box-->
+						</div>
+						<div class="fold-box-contents">
+							<ul class="sub-menu-list">
+								<li class="list-item"><a href="" class="sub-title">고객센터</a></li>
+								<li class="list-item"><a href="" class="sub-title">공지사항</a></li>
+								<li class="list-item"><a href="" class="sub-title">입점상담</a></li>
+								<li class="list-item"><a href="" class="sub-title">제휴문의</a></li>
+								<li class="list-item"><a href="" class="sub-title">FAQ</a></li>
+								<li class="list-item"><a href="" class="sub-title">멤버십 안내</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="fold-box">
+						<div class="fold-box-header">
+							<!--S : toggle-title-box-->
+							<div class="toggle-title-box">
+								<div class="toggle-title">Company</div>
+								<div class="right-box">
+									<span class="ico-toggle is-reverse"></span>
+								</div>
+							</div>
+							<!--E : toggle-title-box-->
+						</div>
+						<div class="fold-box-contents">
+							<div class="company-info-wrap">
+								<div class="company-name">(주)한섬 www.eqlstore.com</div>
+								<div class="company-datail-info">
+									<span class="item">대표이사 김민덕</span><span class="gap"> / </span><span class="item">서울시 강남구 도산대로 523 한섬빌딩</span><br>
+									<span class="item"><a href='tel:1661-8858'>TEL 1661-8858</a></span><!-- 200807 수정 : 전화걸기 --> <br>
+                                    <span class="item">개인정보보호책임자 이정독</span></span><span class="gap"> / </span><span class="item">호스팅 서비스 (주)한섬</span><!-- 200826 호스팅서비스 추가 --><br>
+									<span class="item">사업자 등록번호 120-81-26337</span><a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208126337&apv_perm_no=" target="_blank" class="footer-anchor">사업자 정보 확인</a> </p><!-- 200714 수정 | 사업자 정보 확인 추가 --><br>
+									<span class="item">통신판매업신고번호 강남 제 00826호</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="footer-link-list">
+					<li><a href="#" class="footer-link">회사소개</a></li>
+					<li><a href="#" class="footer-link">이용약관</a></li>
+					<li><a href="#" class="footer-link"><span class="spot">개인정보처리방침</span></a></li>
+					<li>
+						<button type="button" class="footer-link family" data-popup-trigger data-target="#familySiteList">FAMILY SITE</button>
+					</li>
+				</ul>
+				<p class="copyright">COPYRIGHTⓒ 2020 EQL ALL RIGHTS RESERVED</p>
+
+				<!-- s: popup - family site -->
+				<div id="familySiteList" class="ui-dialog-contents" data-class="dialog-bottom">
+					<div class="toggle-title-box">
+						<div class="toggle-title">Family site</div>
+						<div class="right-box">
+							<button type="button" class="btn-pop-close" data-layer-close>
+								<span class="ico-toggle"></span></button>
+						</div>
+					</div>
+					<div class="dialog-contents">
+						<div class="cont-padding">
+							<div class="control-list-wrap">
+								<ul class="category-list">
+									<li class="category-item">
+										<a href="https://thehyundail.com/" target="_blank" class="link-site">더현대닷컴</a>
+									</li>
+									<li class="category-item">
+										<a href="https://hddfs.com/" target="_blank" class="link-site">현대백화점 DUTY FREE</a>
+									</li>
+									<li class="category-item">
+										<a href="http://esuper.ehyundai.com/" target="_blank" class="link-site">e슈퍼마켓</a>
+									</li>
+									<li class="category-item">
+										<a href="https://hyundaihmall.com/" target="_blank" class="link-site">현대Hmall</a>
+									</li>
+									<li class="category-item">
+										<a href="http://mall.hyundailivart.co.kr/" target="_blank" class="link-site">현대리바트몰</a>
+									</li>
+									<li class="category-item">
+										<a href="http://hyundairentalcare.co.kr/" target="_blank" class="link-site">현대렌탈케어</a>
+									</li>
+									<li class="category-item">
+										<a href="http://thehandsome.com/ko" target="_blank" class="link-site">더한섬닷컴</a>
+									</li>
+									<li class="category-item">
+										<a href="http://hfashionmall.com/" target="_blank" class="link-site">H패션몰</a>
+									</li>
+									<li class="category-item">
+										<a href="http://h-vrstation.com/" target="_blank" class="link-site">VR STATION</a>
+									</li>
+									<li class="category-item">
+										<a href="http://ehyundai.com/newPortal/ir/main.do" target="_blank" class="link-site">현대백화점그룹</a>
+									</li>
+									<li class="category-item">
+										<a href="https://ehyundai.com/newPortal/index.do" target="_blank" class="link-site">현대백화점</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundaigreenfood.com/" target="_blank" class="link-site">현대그린푸드</a>
+									</li>
+									<li class="category-item">
+										<a href="https://www.hyundaihmall.com/" target="_blank" class="link-site">현대홈쇼핑</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundailivart.co.kr/" target="_blank" class="link-site">현대리바트몰</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundaihns.com" target="_blank" class="link-site">㈜현대H&amp;S</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hcn.co.kr/" target="_blank" class="link-site">현대HCN</a></li>
+									<li class="category-item">
+										<a href="http://www.hyundaimedia.com/" target="_blank" class="link-site">현대미디어</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundairentalcare.co.kr" target="_blank" class="link-site">현대렌탈케어</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundaidreamtour.com/" target="_blank" class="link-site">현대드림투어</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.everdigm.com/" target="_blank" class="link-site">에버다임</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.cnsfoodsystem.co.kr/" target="_blank" class="link-site">씨엔에스푸드시스템</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundaicatering.co.kr/" target="_blank" class="link-site">현대케이터링시스템</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.hyundai-ite.com/" target="_blank" class="link-site">현대IT&amp;E</a>
+									</li>
+									<li class="category-item">
+										<a href="http://www.thehandsome.com/" target="_blank" class="link-site">한섬</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- e: popup - family site -->
+			</div>
+			<!-- e : footer-wrap -->
+		</div>
+    </div>
+</body>
+</html>
