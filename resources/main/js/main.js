@@ -78,4 +78,93 @@ $(document).ready(function () {
 	});
 	//e : 개인화 팝업 스텝 플로우
 
+	/**
+	 * 투데이 
+	**/
+
+	//월테마 롤링
+	themeSwiper = new Swiper('.theme-banner-wrap', {
+		init: false,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 600,
+		loop: true,
+		// autoplay: {
+		// 	delay: 3000,
+		// },
+		on: {
+			init: function() {
+				var totalNum = $('.main-visual-banner-wrap .swiper-slide').not('.swiper-slide-duplicate').length;
+				$(this.$el).find('.swiper-page-number .total').text(totalNum);
+				$(this.$el).find('.swiper-page-number .current').text(( this.realIndex + 1 ));
+			},
+			slideChange: function() {
+				$(this.$el).find('.swiper-page-number .current').text(( this.realIndex + 1 ));
+			}
+		},
+	});
+	themeSwiper.init();
+
+	//룩북 롤링
+	if ($('.lbook-banner-wrap .swiper-slide').length > 1) {
+		lbookSwiper = new Swiper('.lbook-banner-wrap', {
+			init: false,
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			speed: 600,
+		});
+		lbookSwiper.init();
+	}
+	
+
+	//인플루언서 롤링
+	if ($('.inssa-banner-wrap .swiper-slide').length > 1) {
+		inssaSwiper = new Swiper('.inssa-banner-wrap', {
+			init: false,
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			speed: 600,
+		});
+		inssaSwiper.init();
+	}
+
+	//상품 롤링
+	if ($('.prd-banner-wrap .swiper-slide').length > 1) {
+		prdSwiper = new Swiper('.prd-banner-wrap', {
+			init: false,
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			speed: 600,
+		});
+		prdSwiper.init();
+	}
+
+	//텍스트베너 
+	var descTheme = $('.desc-theme span')
+	var descThemeLength = descTheme.text().length*0.15
+	descTheme.css('animation',descThemeLength+'s');
+	$('.m-theme-wrap .title-today .arrow').click(function(){
+		$(this).closest('.m-theme-wrap').toggleClass('on')
+	});
+
+	//브랜드 리스트
+	$(window).on('scroll',function() {
+		$('.swiper-slide-active .brand-list').each(function(){
+			if(checkVisible($(this))){
+				$('.brand-list').addClass('on');
+			}
+			
+		});
+	});
 });
+
+function checkVisible( elm, eval ) {
+	eval = eval || "object visible";
+	var viewportHeight = $(window).height(), // Viewport Height
+		scrolltop = $(window).scrollTop(), // Scroll Top
+		y = $(elm).offset().top,
+		elementHeight = $(elm).height();   
+	
+	if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+	if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+}

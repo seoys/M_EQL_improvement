@@ -130,58 +130,59 @@
 				}
 			});
 
-			$('.main-today-img-video-box.js-today-img-swiper').each(function (index) {
-				var swiper;
+			// 201012 기존꺼 삭제
+			// $('.main-today-img-video-box.js-today-img-swiper').each(function (index) {
+			// 	var swiper;
 
-				swiper = new Swiper(this, {
-					init: false,
-					slidesPerView: 1,
-					spaceBetween: 0,
-					speed: 600,
-					// autoHeight: true,
-					scrollbar: {
-						el: '.swiper-scrollbar',
-					},
-                    /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-                    on: {
-                        slideChange: function() {
-                            if ($('.js-gate-detail-banner .video-wrap').length > 0) {
-                                $('.js-gate-detail-banner .video-wrap').remove();
-                            }
-                        }
-                    },
-                    /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-				});
+			// 	swiper = new Swiper(this, {
+			// 		init: false,
+			// 		slidesPerView: 1,
+			// 		spaceBetween: 0,
+			// 		speed: 600,
+			// 		// autoHeight: true,
+			// 		scrollbar: {
+			// 			el: '.swiper-scrollbar',
+			// 		},
+            //         /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+            //         on: {
+            //             slideChange: function() {
+            //                 if ($('.js-gate-detail-banner .video-wrap').length > 0) {
+            //                     $('.js-gate-detail-banner .video-wrap').remove();
+            //                 }
+            //             }
+            //         },
+            //         /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+			// 	});
 
-				swiper.init();
-			});
+			// 	swiper.init();
+			// });
 
-			recommendSwiper = new Swiper('.js-recommend-swiper', {
-				init: false,
-				slidesPerView: 2,
-				spaceBetween: 15,
-				speed: 600,
-			});
+			// recommendSwiper = new Swiper('.js-recommend-swiper', {
+			// 	init: false,
+			// 	slidesPerView: 2,
+			// 	spaceBetween: 15,
+			// 	speed: 600,
+			// });
 
-			recommendSwiper.init();
+			// recommendSwiper.init();
 
-			seasonKeywordSwiper = new Swiper('.js-thumb-list-swiper', {
-				init: false,
-				slidesPerView: 2,
-				spaceBetween: 0,
-				speed: 600,
-			});
+			// seasonKeywordSwiper = new Swiper('.js-thumb-list-swiper', {
+			// 	init: false,
+			// 	slidesPerView: 2,
+			// 	spaceBetween: 0,
+			// 	speed: 600,
+			// });
 
-			seasonKeywordSwiper.init();
+			// seasonKeywordSwiper.init();
 
-			todayInsider = new Swiper('.js-main-insider', {
-				init: false,
-				slidesPerView: 1,
-				spaceBetween: 15,
-				speed: 600,
-			});
+			// todayInsider = new Swiper('.js-main-insider', {
+			// 	init: false,
+			// 	slidesPerView: 1,
+			// 	spaceBetween: 15,
+			// 	speed: 600,
+			// });
 
-			todayInsider.init();
+			// todayInsider.init();
 		});
 	</script>
 </head>
@@ -1225,144 +1226,442 @@
 						<!-- e : For You -->
 						<!-- s : Today -->
 						<div class="swiper-slide">
-							<!-- s: insider swiper -->
-							<div class="main-insider-wrap js-main-insider">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<div class="insider-item-box">
-											<a href="#" class="insider-profile">
-												<!-- s: 200331 수정 || 이미지 등록 안 했을 경우 타입 추가 -->
-												<div class="ratio-img-wrap">A</div>
-												<!-- e: 200331 수정 || 이미지 등록 안 했을 경우 타입 추가 -->
-												<!-- s: 이미지 등록 했을 경우 -->
-												<!--
+							<!-- s : Month Theme-->
+							<div class="m-theme-wrap on">
+								<div class="desc-theme-box">
+									<p class="desc-theme">
+										<!-- 텍스트 롤링되어야 하기 때문에 콜론처리 -->
+										<span>09 DAILY PAUSE 코로나-19가 불러온 새로운 라이프스타일의 변화를 마주하게 되는 요즘. 9월의 테마는 나의 만족감을 채워줄 취미 여가를 보내는 이들을 소개합니다. </span>
+										<span>09 DAILY PAUSE 코로나-19가 불러온 새로운 라이프스타일의 변화를 마주하게 되는 요즘. 9월의 테마는 나의 만족감을 채워줄 취미 여가를 보내는 이들을 소개합니다. </span>
+									</p>
+								</div>
+								<div class="title-today">
+									<p class="title">09 theme</p>
+									<a href="#" class="arrow down"></a>
+								</div>
+								<div class="theme-banner-wrap">
+									<div class="theme-swiper swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="#">
 												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg)"></span>
+													<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img01.png);"></span>
 												</span>
-												-->
-												<!-- e: 이미지 등록 했을 경우 -->
+												<span class="banner-info-wrap">
+													<span class="banner-text"><span>박세라 에피소드편</span></span>
+												</span>
 											</a>
-											<div class="insider-content-list-wrap">
-												<ul class="insider-content-list">
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img.jpg" alt="">
-														</button>
-													</li>
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img_2.jpg" alt="">
-														</button>
-													</li>
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img_3.jpg" alt="">
-														</button>
-													</li>
-												</ul>
+										</div>
+										<div class="swiper-slide">
+											<a href="#">
+												<span class="ratio-img-wrap">
+													<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img01.png);"></span>
+												</span>
+												<span class="banner-info-wrap">
+													<span class="banner-text"><span>박세라 에피소드편</span></span>
+												</span>
+											</a>
+										</div>
+									</div>
+									<div class="swiper-page-number">
+										<span class="current"></span>
+										<span class="gap">/</span>
+										<span class="total">2</span>
+									</div>
+								</div>
+							</div>
+							<!-- e : Month Theme-->
+							<!-- s : Editorial List -->
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img02.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">campaign</span>
+												<span class="profile-text">2020-08-18</span>
 											</div>
-											<div class="box-footer">
-												<a href="#" class="insider-info">
-													<span class="insider-title">hyunseoc</span>
-													<span class="insider-post-count">332 <span class="unit">post</span></span>
-												</a>
-												<!--
-													DESC : 이퀄 선택 할 경우 ( 활성화 ) : [selected] 클래스 추가
+										</a>
+										<!--E : profile-name-->
 
-													** EX)
-													<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-												-->
-												<span class="insider-like-count">1,444</span>
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">09월의 테마, 일상의쉼표</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img03.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">season keyword</span>
+												<span class="profile-text">2020-08-18</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">화이트 셔츠 인 무비</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												로맨틱부터 액션까지 장르를 뛰어넘는 화이트 셔츠, 주인공이 될 순백의 아이템의 전성기가 돌아왔다. 
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img04.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">interview</span>
+												<span class="profile-text">2020-08-18</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">모델 박세라의 고유한 색(色)</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img05.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">season keyword</span>
+												<span class="profile-text">2020-08-18</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">자유롭고 우아한 플루이드</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e : Editorial List -->
+							<!-- s: Look Book -->
+							<div class="lbook-banner-wrap swiper-tp01">
+								<div class="lbook-swiper swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img07.png);"></span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">jrium</span>
+													<span class="profile-text cor-bk">제이리움</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+										</div>
+										<!-- e : profile-flex-wrap-->
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img07.png);"></span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">jrium</span>
+													<span class="profile-text cor-bk">제이리움</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+										</div>
+										<!-- e : profile-flex-wrap-->
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img07.png);"></span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">jrium</span>
+													<span class="profile-text cor-bk">제이리움</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+										</div>
+										<!-- e : profile-flex-wrap-->
+									</div>
+								</div>
+							</div>
+							<!-- e : Look Book -->
+							<!-- s : Editorial List -->
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img04.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">season keyword</span>
+												<span class="profile-text">2020-08-18</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">모델 박세라의 고유한 색(色)</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img05.png);"></span>
+								</div>
+								<div class="main-today-bottom-box">
+									<!--S : profile-flex-wrap-->
+									<div class="profile-flex-wrap">
+										<!--S : profile-name-->
+										<a href="#" class="profile-name">
+											<div class="profile-detail">
+												<span class="fullname">insider</span>
+												<span class="profile-text">2020-08-18</span>
+											</div>
+										</a>
+										<!--E : profile-name-->
+
+										<div class="profile-right">
+											<button type="button" class="btn-item-share"><span>공유하기</span></button>
+											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+											<!-- S : 이퀄 활성화시 -->
+											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+											<!-- E : 이퀄 활성화시 -->
+										</div>
+									</div>
+									<!--E : profile-flex-wrap-->
+									<div class="today-info-wrap">
+										<p class="today-info-title">자유롭고 우아한 플루이드</p>
+										<div class="more-text-wrap">
+											<span class="text">
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- e : Editorial List -->
+							<!-- s : brand -->
+							<div class="brand-list-wrap">
+								<div class="title-today">
+									<p class="title">09 brands</p>
+									<a href="#" class="arrow right"></a>
+								</div>
+								<ul class="brand-list">
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>amomento</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+									<li><a href="#"><span class="img" style="background-image:url(/resources/main/images/temp_img07.png)"></span>eenk</a></li>
+								</ul>
+							</div>
+							<!-- e : brand -->
+							<!-- s: influencer -->
+							<div class="inssa-banner-wrap swiper-tp01">
+								<div class="lbook-swiper swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img09.png);"></span>
+											</span>
+											<span class="banner-info-wrap">
+												<span class="name">amomento</span>
+												<span class="prd">Wide Collor Blouse Blue Grey</span>
+												<span class="price">99,966,800</span>
+												<span class="sale">20%</span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">hwon.lee</span>
+													<span class="profile-text">2020-08-18</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+											<div class="profile-right">
 												<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+												<!-- s : 이퀄 활성화시 -->
+												<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+												<!-- e : 이퀄 활성화시 -->
 											</div>
 										</div>
+										<!-- e : profile-flex-wrap-->
 									</div>
 									<div class="swiper-slide">
-										<div class="insider-item-box">
-											<a href="#" class="insider-profile">
-												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/temp_insider_img.jpg)"></span>
-												</span>
-											</a>
-											<div class="insider-content-list-wrap">
-												<ul class="insider-content-list">
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img.jpg" alt="">
-														</button>
-													</li>
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img_2.jpg" alt="">
-														</button>
-													</li>
-													<li class="insider-item">
-														<button type="button" class="insider-content">
-															<img src="../../resources/images/temp/temp_story_img_3.jpg" alt="">
-														</button>
-													</li>
-												</ul>
-											</div>
-											<div class="box-footer">
-												<a href="#" class="insider-info">
-													<span class="insider-title">hyunseoc</span>
-													<span class="insider-post-count">332 <span class="unit">post</span></span>
-												</a>
-												<!--
-													DESC : 이퀄 선택 할 경우 ( 활성화 ) : [selected] 클래스 추가
-
-													** EX)
-													<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-												-->
-												<span class="insider-like-count">1,444</span>
-												<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-							<!-- e: insider swiper -->
-							<div class="main-text-wrap">
-								<!-- s: html 영역 -->
-								<div class="editor-wrap">
-									Outwear Underwear Shoes Sneakers Shirts <span style="text-decoration: underline;">Dress</span> Short-sleeves Socks
-									Beauty Jewelery <span style="text-decoration: underline;">Wallets</span> Books Magazine Clothing Accessories Knitwear
-									Skirt Audio Technology Tote Bags Swimwear Eyewear Jumpsuit
-								</div>
-								<!-- e: html 영역 -->
-							</div>
-							<div class="main-today-box">
-								<div class="main-today-img-video-box js-today-img-swiper">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<img src="/resources/images/temp/temp_main_today.jpg" alt="">
-										</div>
-										<div class="swiper-slide">
-											<img src="/resources/images/temp/temp_main_today_long.jpg" alt="">
-										</div>
-										<div class="swiper-slide">
-											<div class="video-box">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img09.png);"></span>
+											</span>
+											<span class="banner-info-wrap">
+												<span class="name">amomento</span>
+												<span class="prd">Wide Collor Blouse Blue Grey</span>
+												<span class="price">99,966,800</span>
+												<span class="sale">20%</span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
 												<div class="ratio-img-wrap">
-													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_main_today_video.jpg);"></div>
-													<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
 												</div>
+												<div class="profile-detail">
+													<span class="fullname">hwon.lee</span>
+													<span class="profile-text">2020-08-18</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+											<div class="profile-right">
+												<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+												<!-- s : 이퀄 활성화시 -->
+												<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+												<!-- e : 이퀄 활성화시 -->
 											</div>
 										</div>
+										<!-- e : profile-flex-wrap-->
 									</div>
-									<div class="swiper-scrollbar"></div>
+								</div>
+							</div>
+							<!-- e : influencer -->
+							<!-- s : Editorial List -->
+							<div class="main-today-box">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img04.png);"></span>
 								</div>
 								<div class="main-today-bottom-box">
 									<!--S : profile-flex-wrap-->
 									<div class="profile-flex-wrap">
 										<!--S : profile-name-->
 										<a href="#" class="profile-name">
-											<div class="ratio-img-wrap">
-												<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
-											</div>
 											<div class="profile-detail">
-												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
-												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+												<span class="fullname">season keyword</span>
+												<span class="profile-text">2020-08-18</span>
 											</div>
 										</a>
 										<!--E : profile-name-->
@@ -1377,40 +1676,27 @@
 									</div>
 									<!--E : profile-flex-wrap-->
 									<div class="today-info-wrap">
-										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들 JIL SANDER 19SS</p>
-										<!-- s: more text -->
-										<!--
-											DESC :
-											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
-										-->
+										<p class="today-info-title">모델 박세라의 고유한 색(色)</p>
 										<div class="more-text-wrap">
 											<span class="text">
-												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
 											</span>
-											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
 										</div>
-										<!-- e: more text -->
 									</div>
-
-									<button type="button" class="btn-today-product" data-popup-trigger data-target="#taggedProdList">Product</button>
-									<button type="button" class="btn-main-more"><span class="eng">Learn More</span><span>더 자세한 내용 보러 가기</span></button>
 								</div>
 							</div>
 							<div class="main-today-box">
-								<div class="main-today-img-video-box">
-									<img src="/resources/images/temp/temp_main_today.jpg" alt="">
+								<div class="ratio-img-wrap">
+									<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img05.png);"></span>
 								</div>
 								<div class="main-today-bottom-box">
 									<!--S : profile-flex-wrap-->
 									<div class="profile-flex-wrap">
 										<!--S : profile-name-->
 										<a href="#" class="profile-name">
-											<div class="ratio-img-wrap">
-												<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
-											</div>
 											<div class="profile-detail">
-												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
-												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
+												<span class="fullname">insider</span>
+												<span class="profile-text">2020-08-18</span>
 											</div>
 										</a>
 										<!--E : profile-name-->
@@ -1425,320 +1711,88 @@
 									</div>
 									<!--E : profile-flex-wrap-->
 									<div class="today-info-wrap">
-										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들</p>
-										<!-- s: more text -->
-										<!--
-											DESC :
-											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
-										-->
-										<div class="more-text-wrap is-more">
-											<span class="text">
-												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었다. 세번째 에피의 주인공 끌어올리며, 트랜스 커뮤니티에 대한 인식 변화를 추구하고 있다. 사람들에게 영감을 주는 그녀의 예술 활동들을 구찌와 지큐가 함께 독특한 영상미를 담아 소개한다.
-											</span>
-											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
-										</div>
-										<!-- e: more text -->
-									</div>
-
-									<button type="button" class="btn-today-product" data-popup-trigger data-target="#taggedProdList">Product</button>
-									<button type="button" class="btn-main-more"><span class="eng">Learn More</span><span>더 자세한 내용 보러 가기</span></button>
-								</div>
-							</div>
-
-							<!-- s: Recommend Item -->
-							<div class="main-today-box">
-								<p class="today-box-title">Recommend Item</p>
-								<div class="main-recommend-wrap js-recommend-swiper">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<div class="prod-item">
-												<div class="prod-link">
-													<div class="ratio-img-wrap">
-														<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-																<span class="manual-badge-wrap">
-																	<span class="manual-badge">Excluisive</span>
-																	<span class="manual-badge spot">Sale d-4</span>
-																</span>
-														</a>
-														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-													</div>
-													<a class="info-wrap">
-														<span class="prod-brand-name">AEER</span>
-														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-														<span class="prod-price-wrap">
-																<span class="prod-price-value">
-																	<span class="prod-price">9,066,800</span>
-																	<span class="prod-price-normal">9,086,000</span>
-																</span>
-																<span class="discount-percent">20%</span>
-															</span>
-														<span class="auto-badge-wrap">
-																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-															</span>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide">
-											<div class="prod-item">
-												<div class="prod-link">
-													<div class="ratio-img-wrap">
-														<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-																<span class="manual-badge-wrap">
-																	<span class="manual-badge">Excluisive</span>
-																	<span class="manual-badge spot">Sale d-4</span>
-																</span>
-														</a>
-														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-													</div>
-													<a class="info-wrap">
-														<span class="prod-brand-name">AEER</span>
-														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-														<span class="prod-price-wrap">
-																<span class="prod-price-value">
-																	<span class="prod-price">9,066,800</span>
-																	<span class="prod-price-normal">9,086,000</span>
-																</span>
-																<span class="discount-percent">20%</span>
-															</span>
-														<span class="auto-badge-wrap">
-																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-															</span>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide">
-											<div class="prod-item">
-												<div class="prod-link">
-													<div class="ratio-img-wrap">
-														<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-																<span class="manual-badge-wrap">
-																	<span class="manual-badge">Excluisive</span>
-																	<span class="manual-badge spot">Sale d-4</span>
-																</span>
-														</a>
-														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-													</div>
-													<a class="info-wrap">
-														<span class="prod-brand-name">AEER</span>
-														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-														<span class="prod-price-wrap">
-																<span class="prod-price-value">
-																	<span class="prod-price">9,066,800</span>
-																	<span class="prod-price-normal">9,086,000</span>
-																</span>
-																<span class="discount-percent">20%</span>
-															</span>
-														<span class="auto-badge-wrap">
-																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-															</span>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide">
-											<div class="prod-item">
-												<div class="prod-link">
-													<div class="ratio-img-wrap">
-														<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-																<span class="manual-badge-wrap">
-																	<span class="manual-badge">Excluisive</span>
-																	<span class="manual-badge spot">Sale d-4</span>
-																</span>
-														</a>
-														<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-													</div>
-													<a class="info-wrap">
-														<span class="prod-brand-name">AEER</span>
-														<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-														<span class="prod-price-wrap">
-																<span class="prod-price-value">
-																	<span class="prod-price">9,066,800</span>
-																	<span class="prod-price-normal">9,086,000</span>
-																</span>
-																<span class="discount-percent">20%</span>
-															</span>
-														<span class="auto-badge-wrap">
-																<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-															</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- e: Recommend Item -->
-							<div class="main-today-box">
-								<div class="main-today-img-video-box js-today-img-swiper">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<img src="/resources/images/temp/temp_main_today.jpg" alt="">
-										</div>
-										<div class="swiper-slide">
-											<img src="/resources/images/temp/temp_main_today_long.jpg" alt="">
-										</div>
-										<div class="swiper-slide">
-											<div class="video-box">
-												<div class="ratio-img-wrap">
-													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_main_today_video.jpg);"></div>
-													<button type="button" class="btn-video" title="비디오 재생" data-video-type="youtube" data-video-url="https://youtu.be/TjC1Yv-o08E"></button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-scrollbar"></div>
-								</div>
-								<div class="main-today-bottom-box">
-									<!--S : profile-flex-wrap-->
-									<div class="profile-flex-wrap">
-										<!--S : profile-name-->
-										<a href="#" class="profile-name">
-											<div class="ratio-img-wrap">
-												<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
-											</div>
-											<div class="profile-detail">
-												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
-												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
-											</div>
-										</a>
-										<!--E : profile-name-->
-
-										<div class="profile-right">
-											<button type="button" class="btn-item-share"><span>공유하기</span></button>
-											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
-											<!-- S : 이퀄 활성화시 -->
-											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
-											<!-- E : 이퀄 활성화시 -->
-										</div>
-									</div>
-									<!--E : profile-flex-wrap-->
-									<div class="today-info-wrap">
-										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들 JIL SANDER 19SS</p>
-										<!-- s: more text -->
-										<!--
-											DESC :
-											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
-										-->
+										<p class="today-info-title">자유롭고 우아한 플루이드</p>
 										<div class="more-text-wrap">
 											<span class="text">
-												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었
+												어느 때보다 오버사이즈가 주목 받고 있는 지금, 움직임에 따라 펄럭이고 흘러내리는 플루이드 디자인도 함께 기억해야 한다.
 											</span>
-											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
 										</div>
-										<!-- e: more text -->
 									</div>
 								</div>
 							</div>
-							<div class="main-today-box">
-								<div class="main-today-img-video-box">
-									<img src="/resources/images/temp/temp_main_today.jpg" alt="">
-								</div>
-								<div class="main-today-bottom-box">
-									<!--S : profile-flex-wrap-->
-									<div class="profile-flex-wrap">
-										<!--S : profile-name-->
-										<a href="#" class="profile-name">
-											<div class="ratio-img-wrap">
-												<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
-											</div>
-											<div class="profile-detail">
-												<span class="fullname">AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE AECAWHITE</span>
-												<span class="profile-text"><span>9hrs</span> <span>32</span>comments</span>
-											</div>
+							<!-- e : Editorial List -->
+							<!-- s: product -->
+							<div class="prd-banner-wrap swiper-tp01">
+								<div class="lbook-swiper swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img010.png);"></span>
+											</span>
+											<span class="banner-info-wrap">
+												<span class="prd">Wide Collor Blouse Blue Grey</span>
+												<span class="price">99,966,800</span>
+												<span class="sale">20%</span>
+											</span>
 										</a>
-										<!--E : profile-name-->
-
-										<div class="profile-right">
-											<button type="button" class="btn-item-share"><span>공유하기</span></button>
-											<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
-											<!-- S : 이퀄 활성화시 -->
-											<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
-											<!-- E : 이퀄 활성화시 -->
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">eenk</span>
+													<span class="profile-text">잉크</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+											<div class="profile-right">
+												<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+												<!-- s : 이퀄 활성화시 -->
+												<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+												<!-- e : 이퀄 활성화시 -->
+											</div>
 										</div>
+										<!-- e : profile-flex-wrap-->
 									</div>
-									<!--E : profile-flex-wrap-->
-									<div class="today-info-wrap">
-										<p class="today-info-title">JIL SANDER 19SS 컬렉션 리뷰 : 상징적 디테일들</p>
-										<!-- s: more text -->
-										<!--
-											DESC :
-											- more 클릭할 경우 : 클릭시 말줄임, more 텍스트 삭제 비활성화를 위해 스타일 추가 : [more-text-wrap]에 [is-more] 추가
-										-->
-										<div class="more-text-wrap is-more">
-											<span class="text">
-												지큐와 구찌의 글로벌 콜라보레이션 비디오 시리즈 &lt;더 퍼포머스&gt;의 새로운 에피소드가 공개되었다. 세번째 에피의 주인공 끌어올리며, 트랜스 커뮤니티에 대한 인식 변화를 추구하고 있다. 사람들에게 영감을 주는 그녀의 예술 활동들을 구찌와 지큐가 함께 독특한 영상미를 담아 소개한다.
+									<div class="swiper-slide">
+										<a href="#">
+											<span class="ratio-img-wrap">
+												<span class="img-viewer" style="background-image: url(/resources/main/images/temp_img010.png);"></span>
 											</span>
-											<span class="delete-text"><span class="tt-ellipsis">...</span> <span class="tt-more">more</span></span>
+											<span class="banner-info-wrap">
+												<span class="prd">Wide Collor Blouse Blue Grey</span>
+												<span class="price">99,966,800</span>
+												<span class="sale">20%</span>
+											</span>
+										</a>
+										<!-- s : profile-flex-wrap-->
+										<div class="profile-flex-wrap">
+											<!-- s : profile-name-->
+											<a href="#" class="profile-name">
+												<div class="ratio-img-wrap">
+													<div class="img-viewer" style="background-image: url(/resources/images/temp/temp_insider_img.jpg);"></div>
+												</div>
+												<div class="profile-detail">
+													<span class="fullname">eenk</span>
+													<span class="profile-text">잉크</span>
+												</div>
+											</a>
+											<!-- e : profile-name-->
+											<div class="profile-right">
+												<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
+												<!-- s : 이퀄 활성화시 -->
+												<!--<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>-->
+												<!-- e : 이퀄 활성화시 -->
+											</div>
 										</div>
-										<!-- e: more text -->
+										<!-- e : profile-flex-wrap-->
 									</div>
 								</div>
 							</div>
-							<!-- s: Season Keywor -->
-							<div class="main-today-box">
-								<p class="today-box-title">Season Keyword</p>
-								<!-- s:prd swiper -->
-								<div class="thumb-list-swiper-wrap js-thumb-list-swiper">
-									<div class="swiper-wrapper">
-										<!-- s: thumb box -->
-										<div class="thumb-item-box swiper-slide">
-											<a href="" class="box-link">
-												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
-													<span class="img-text-wrap">
-														<span class="editor-wrap">Oversize Knit</span>
-														<span class="editor-wrap">오버사이즈 니트</span>
-													</span>
-												</span>
-											</a>
-										</div>
-										<!-- e: thumb box -->
-										<!-- s: thumb box -->
-										<div class="thumb-item-box swiper-slide">
-											<a href="" class="box-link">
-												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
-													<span class="img-text-wrap">
-														<span class="editor-wrap">Oversize Knit</span>
-														<span class="editor-wrap">오버사이즈 니트</span>
-													</span>
-												</span>
-											</a>
-										</div>
-										<!-- e: thumb box -->
-										<!-- s: thumb box -->
-										<div class="thumb-item-box swiper-slide">
-											<a href="" class="box-link">
-												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
-													<span class="img-text-wrap">
-														<span class="editor-wrap">Oversize Knit</span>
-														<span class="editor-wrap">오버사이즈 니트</span>
-													</span>
-												</span>
-											</a>
-										</div>
-										<!-- e: thumb box -->
-										<!-- s: thumb box -->
-										<div class="thumb-item-box swiper-slide">
-											<a href="" class="box-link">
-												<span class="ratio-img-wrap">
-													<span class="img-viewer" style="background-image: url(../../resources/images/temp/tem_search_keyword_img.jpg)"></span>
-													<span class="img-text-wrap">
-														<span class="editor-wrap">Oversize Knit</span>
-														<span class="editor-wrap">오버사이즈 니트</span>
-													</span>
-												</span>
-											</a>
-										</div>
-										<!-- e: thumb box -->
-									</div>
-								</div>
-								<!-- e:prd swiper -->
-							</div>
-							<!-- e: Season Keywor -->
+							<!-- e : product -->
 						</div>
 						<!-- e : Today -->
 					</div>
