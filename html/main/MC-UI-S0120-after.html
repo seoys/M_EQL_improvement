@@ -75,116 +75,6 @@
 	<!-- UI JavaScript
 			================================================== -->
 	<script src="/resources/js/front_ui.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			var mainSectionSwiper, recommendSwiper, seasonKeywordSwiper, todayInsider;
-
-			// special banner Marquee 기능
-			if ($('.special-banner-wrap').length > 0) {
-				handsome.ui.front.setMarquee();
-			}
-			var Pagefirst = true;
-			mainSectionSwiper = new Swiper('.js-main-wrap', {
-				init: false,
-				slidesPerView: 1,
-				spaceBetween: 0,
-				speed: 300,
-				allowTouchMove: false,
-				autoHeight: true,
-                /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-                on: {
-                    slideChange: function() {
-                        if ($('.video-wrap', this.$el).length > 0) {
-                            $('.video-wrap', this.$el).remove();
-                        }
-                    }
-                },
-                /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-			});
-			mainSectionSwiper.init();
-
-
-            //201006 수정 : 상단 탭 cart 클릭시 비활성화
-			$('.mheader-bottom .mbtn').not('.cart').on('click', function () {
-				if (!$(this).hasClass('is-active')) {
-					$('.mheader-bottom .mbtn').removeClass('is-active');
-                    $(this).addClass('is-active');
-
-					mainSectionSwiper.slideTo($(this).index());
-				}
-			});
-
-
-			$('.btn-video').on('click', function () {
-				var videoData, videoType, videoUrl;
-				videoData = $(this).data();
-				videoType = videoData.videoType;
-				videoUrl = videoData.videoUrl;
-				switch (videoType) {
-					case 'youtube':
-						handsome.ui.front.setYoutubeIFrame($(this).closest('.video-box'), videoUrl);
-						break;
-					case 'vimeo':
-						handsome.ui.front.setVimeoIframe($(this).closest('.video-box'), videoUrl);
-						break;
-				}
-			});
-
-			// 201012 기존꺼 삭제
-			// $('.main-today-img-video-box.js-today-img-swiper').each(function (index) {
-			// 	var swiper;
-
-			// 	swiper = new Swiper(this, {
-			// 		init: false,
-			// 		slidesPerView: 1,
-			// 		spaceBetween: 0,
-			// 		speed: 600,
-			// 		// autoHeight: true,
-			// 		scrollbar: {
-			// 			el: '.swiper-scrollbar',
-			// 		},
-            //         /* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-            //         on: {
-            //             slideChange: function() {
-            //                 if ($('.js-gate-detail-banner .video-wrap').length > 0) {
-            //                     $('.js-gate-detail-banner .video-wrap').remove();
-            //                 }
-            //             }
-            //         },
-            //         /* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
-			// 	});
-
-			// 	swiper.init();
-			// });
-
-			// recommendSwiper = new Swiper('.js-recommend-swiper', {
-			// 	init: false,
-			// 	slidesPerView: 2,
-			// 	spaceBetween: 15,
-			// 	speed: 600,
-			// });
-
-			// recommendSwiper.init();
-
-			// seasonKeywordSwiper = new Swiper('.js-thumb-list-swiper', {
-			// 	init: false,
-			// 	slidesPerView: 2,
-			// 	spaceBetween: 0,
-			// 	speed: 600,
-			// });
-
-			// seasonKeywordSwiper.init();
-
-			// todayInsider = new Swiper('.js-main-insider', {
-			// 	init: false,
-			// 	slidesPerView: 1,
-			// 	spaceBetween: 15,
-			// 	speed: 600,
-			// });
-
-			// todayInsider.init();
-		});
-	</script>
 </head>
 <body>
 	<div class="wrap">
@@ -210,20 +100,20 @@
 				<script src="/resources/main/js/main.js"></script><!-- 201006 js 추가 :main에서만 사용 -->
 				<div class="main-wrap js-main-wrap">
                     <!-- s : 로그인 & 개인화 설정 전 -->
-                    <div class="main-personalize-banner show">
+                    <!-- <div class="main-personalize-banner show">
                         <img src="/resources/images/main/main_foryou_banner.jpg" alt="">
                         <button type="button" class="btn-main-more" data-popup-trigger data-target="#favioriteBrandSelect"><span class="eng">Choose your favorite</span><span>취향 선택하기</span></button>
                         <div class="bottom-btn">
                             <a href="#none" class="bbtn">오늘은 그만보기</a>
                             <a href="#none" class="bbtn">닫기</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- e : 로그인 & 개인화 설정 전 -->
                     <!-- s : 하단 띠 배너 : 메인노출 -->
-                    <div class="special-banner-wrap show up">
+                    <!-- <div class="special-banner-wrap show up">
                         <a href="#">무료 배송 (£200/€200/$250 이상 주문) &amp; 무료 반품</a>
-                        <button type="button" class="close"><span>close</span></button><!-- 하루동안 노출 X -->
-					</div>
+                        <button type="button" class="close"><span>close</span></button>
+					</div> -->
 					<!-- e : 하단 띠 배너 : 메인노출 -->
 					<div class="swiper-wrapper">
 						<!-- s : For You -->
@@ -1968,194 +1858,6 @@
 					</div>
 				</div>
 				<!-- e: popup - For you 관심 브랜드 등록 팝업 -->
-
-				<!-- s: popup - bottom -->
-				<div id="taggedProdList" class="ui-dialog-contents dialog-tagged-prod" data-class="dialog-bottom">
-					<div class="dialog-title">
-						<div class="pop-title">태그된 제품</div>
-					</div>
-					<div class="dialog-contents">
-						<!-- s: prod-grid-list -->
-						<div class="prod-grid-list">
-							<!-- s: prod-item || equal select type -->
-							<div class="prod-item">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item || equal select type -->
-							<!-- s: prod-item -->
-							<div class="prod-item">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item -->
-							<!-- s: prod-item(sold-out) || equal select type -->
-							<div class="prod-item sold-out">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">Sold Out</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item(sold-out) || equal select type -->
-							<!-- s: prod-item(sold-out) -->
-							<div class="prod-item sold-out">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">Sold Out</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item(sold-out) -->
-							<!-- s: prod-item || equal select type -->
-							<div class="prod-item">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal selected"><span>이퀄 해제</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item || equal select type -->
-							<!-- s: prod-item -->
-							<div class="prod-item">
-								<div class="prod-link">
-									<div class="ratio-img-wrap">
-										<a href="#" class="img-viewer" style="background-image: url(/resources/images/temp/temp_prod_img.jpg), url(/resources/images/common/comn_no_img_3by4.png);">
-											<span class="manual-badge-wrap">
-												<span class="manual-badge">Excluisive</span>
-												<span class="manual-badge">Pre Order</span>
-											</span>
-										</a>
-										<button type="button" class="btn-item-equal"><span>이퀄 선택</span></button>
-									</div>
-									<a class="info-wrap">
-										<span class="prod-brand-name">AEER</span>
-										<span class="prod-name">12/19 (목) 예약발송 / FUNNEL LIGHT SHORT PADDING_MODERN BLACK</span>
-										<span class="prod-price-wrap">
-											<span class="prod-price-value">
-												<span class="prod-price">9,066,800</span>
-												<span class="prod-price-normal">9,086,000</span>
-											</span>
-											<span class="discount-percent">20%</span>
-										</span>
-										<span class="auto-badge-wrap">
-											<span class="auto-badge">New</span><span class="auto-badge">Coupon</span>
-										</span>
-									</a>
-								</div>
-							</div>
-							<!-- e: prod-item -->
-						</div>
-						<!-- e: prod-grid-list -->
-					</div>
-				</div>
-				<!-- e: popup - bottom -->
 			</div>
 			<!-- e : contents-wrap -->
 

@@ -1,4 +1,57 @@
 $(document).ready(function () {
+	var mainSectionSwiper, recommendSwiper, seasonKeywordSwiper, todayInsider;
+
+	// special banner Marquee 기능
+	if ($('.special-banner-wrap').length > 0) {
+		handsome.ui.front.setMarquee();
+	}
+	var Pagefirst = true;
+	mainSectionSwiper = new Swiper('.js-main-wrap', {
+		init: false,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 300,
+		allowTouchMove: false,
+		autoHeight: true,
+		/* s: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+		on: {
+			slideChange: function() {
+				if ($('.video-wrap', this.$el).length > 0) {
+					$('.video-wrap', this.$el).remove();
+				}
+			}
+		},
+		/* e: 200320 추가 || 슬라이드 이동 후 비디오 초기화 */
+	});
+	mainSectionSwiper.init();
+
+
+	//201006 수정 : 상단 탭 cart 클릭시 비활성화
+	$('.mheader-bottom .mbtn').not('.cart').on('click', function () {
+		if (!$(this).hasClass('is-active')) {
+			$('.mheader-bottom .mbtn').removeClass('is-active');
+			$(this).addClass('is-active');
+
+			mainSectionSwiper.slideTo($(this).index());
+		}
+	});
+
+
+	$('.btn-video').on('click', function () {
+		var videoData, videoType, videoUrl;
+		videoData = $(this).data();
+		videoType = videoData.videoType;
+		videoUrl = videoData.videoUrl;
+		switch (videoType) {
+			case 'youtube':
+				handsome.ui.front.setYoutubeIFrame($(this).closest('.video-box'), videoUrl);
+				break;
+			case 'vimeo':
+				handsome.ui.front.setVimeoIframe($(this).closest('.video-box'), videoUrl);
+				break;
+		}
+	});
+	
 	//s : 하단띠 배너 위치
 	var scrollPos = $(window).scrollTop() || 0;
 	$(window).scroll(function(event){ 
@@ -43,39 +96,39 @@ $(document).ready(function () {
 	 * 스텝3 .brand-select-wrap.step03
 	 * addClass step0(N) 
 	 **/
-	var stepDiv = 0;
-	$('.brand-select-wrap .gender-select-item').click(function(){
-		if(stepDiv==0){
-			$('.brand-select-wrap').removeClass('step01');
-			$('.brand-select-wrap').addClass('step02');
-			$('.brand-select-wrap .brand-select-list').addClass('show');
-		}
-		stepDiv = 1;
-	});
-	//키워드 선택시
-	$(document).on('click','.step02 .key-select .brand-select-item',function(){
-		var chkLength = $('.step02 .key-select input:checkbox:checked').length
-		if(chkLength >= 5){
-			$('.btn-even-wrap .next').addClass('off');
-		}else{
-			$('.btn-even-wrap .next').removeClass('off');
-			if(chkLength > 0){
-				$('.btn-even-wrap .num').text('0'+chkLength)
-			}else{
-				$('.btn-even-wrap .num').text('')
-			}
-		}
-	});
-	//이전버튼
-	$('.pbtn.prev').click(function(){
-		$('.brand-select-wrap').removeClass('step03');
-		$('.brand-select-wrap').addClass('step02');
-	});
-	//다음버튼
-	$('.pbtn.next2').click(function(){
-		$('.brand-select-wrap').removeClass('step02');
-		$('.brand-select-wrap').addClass('step03');
-	});
+	// var stepDiv = 0;
+	// $('.brand-select-wrap .gender-select-item').click(function(){
+	// 	if(stepDiv==0){
+	// 		$('.brand-select-wrap').removeClass('step01');
+	// 		$('.brand-select-wrap').addClass('step02');
+	// 		$('.brand-select-wrap .brand-select-list').addClass('show');
+	// 	}
+	// 	stepDiv = 1;
+	// });
+	// //키워드 선택시
+	// $(document).on('click','.step02 .key-select .brand-select-item',function(){
+	// 	var chkLength = $('.step02 .key-select input:checkbox:checked').length
+	// 	if(chkLength >= 5){
+	// 		$('.btn-even-wrap .next').addClass('off');
+	// 	}else{
+	// 		$('.btn-even-wrap .next').removeClass('off');
+	// 		if(chkLength > 0){
+	// 			$('.btn-even-wrap .num').text('0'+chkLength)
+	// 		}else{
+	// 			$('.btn-even-wrap .num').text('')
+	// 		}
+	// 	}
+	// });
+	// //이전버튼
+	// $('.pbtn.prev').click(function(){
+	// 	$('.brand-select-wrap').removeClass('step03');
+	// 	$('.brand-select-wrap').addClass('step02');
+	// });
+	// //다음버튼
+	// $('.pbtn.next2').click(function(){
+	// 	$('.brand-select-wrap').removeClass('step02');
+	// 	$('.brand-select-wrap').addClass('step03');
+	// });
 	//e : 개인화 팝업 스텝 플로우
 
 	/**
